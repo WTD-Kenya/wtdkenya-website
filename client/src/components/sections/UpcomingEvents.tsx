@@ -1,0 +1,75 @@
+import { useQuery } from "@tanstack/react-query";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { AlertCircle } from "lucide-react";
+import EventCard from "@/components/EventCard";
+import { Link } from "wouter";
+import type { MeetupEvent } from "@/lib/types";
+
+export default function UpcomingEvents() {
+  const { data: events, isLoading, error } = useQuery<MeetupEvent[]>({
+    queryKey: ["/api/events"],
+  });
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Upcoming Events</h2>
+          <p className="mt-4 text-xl text-gray-600">Join us for workshops, talks, and networking opportunities</p>
+        </div>
+        
+        <div className="mt-12">
+          {isLoading && (
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden p-6">
+                  <Skeleton className="h-4 w-20 mb-3" />
+                  <Skeleton className="h-6 w-full mb-3" />
+                  <Skeleton className="h-4 w-full mb-2" />
+                  <Skeleton className="h-4 w-3/4 mb-4" />
+                  <Skeleton className="h-4 w-32 mb-6" />
+                  <Skeleton className="h-10 w-32" />
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {error && (
+            <Alert className="max-w-md mx-auto">
+              <AlertCircle className="h-4 w-4" />
+              <AlertDescription>
+                Unable to load events at this time. Please check back later or visit our Meetup page directly.
+              </AlertDescription>
+            </Alert>
+          )}
+          
+          {events && events.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">No upcoming events scheduled.</p>
+              <p className="text-gray-500 mt-2">Check back soon for new events!</p>
+            </div>
+          )}
+          
+          {events && events.length > 0 && (
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {events.slice(0, 3).map((event) => (
+                <EventCard key={event.id} event={event} />
+              ))}
+            </div>
+          )}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <Link href="/events">
+            <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">
+              View All Events
+              <i className="fas fa-arrow-right ml-2"></i>
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}

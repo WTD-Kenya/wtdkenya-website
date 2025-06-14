@@ -1,0 +1,78 @@
+# Node.js
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Vite
+server/public/
+.vite/
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+.history/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+*.egg
+*.log
+*.pot
+*.mo
+*.db
+*.sqlite3
+*.sqlite
+*.pyc
+*.pyo
+*.pyd
+*.migrations/
+db.sqlite3
+
+# Django
+.env
+.env.*
+*.env
+*.secret
+media/
+staticfiles/
+local_settings.py
+
+# Build artifacts
+*.tar.gz
+*.zip
+*.bak
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Lock files
+uv.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Misc
+coverage/
+.idea/
+*.swp
+*.swo
+*.orig
+*.rej

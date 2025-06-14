@@ -1,0 +1,63 @@
+{
+  "about": {
+    "mission": "To foster inclusive learning, sharing, and collaboration among Kenya's technical writers, developers, and documentation enthusiasts.",
+    "vision": "To be a leading hub for documentation excellence in Africa, connecting local talent with global opportunities.",
+    "description": "Write the Docs Kenya is part of the global Write the Docs network, dedicated to building better documentation practices and connecting professionals across the documentation ecosystem."
+  },
+  "team": [
+    {
+      "name": "Sarah Njeri",
+      "role": "Community Organizer",
+      "bio": "Technical writer with 5+ years of experience in fintech documentation. Passionate about making complex topics accessible.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+      "social": {
+        "twitter": "https://twitter.com/sarahnjeri",
+        "linkedin": "https://linkedin.com/in/sarahnjeri",
+        "instagram": "https://instagram.com/sarahnjeri"
+      }
+    },
+    {
+      "name": "Michael Ochieng",
+      "role": "Events Coordinator",
+      "bio": "Software developer turned documentation advocate. Specializes in API documentation and developer experience.",
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+      "social": {
+        "twitter": "https://twitter.com/michaelochieng",
+        "linkedin": "https://linkedin.com/in/michaelochieng",
+        "instagram": "https://instagram.com/michaelochieng"
+      }
+    },
+    {
+      "name": "Grace Wanjiku",
+      "role": "Content Lead",
+      "bio": "UX writer and content strategist focused on inclusive design and accessibility in documentation.",
+      "image": "https://images.unsplash.com/photo-1494790108755-2616b9448bb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+      "social": {
+        "twitter": "https://twitter.com/gracewanjiku",
+        "linkedin": "https://linkedin.com/in/gracewanjiku",
+        "instagram": "https://instagram.com/gracewanjiku"
+      }
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Had the best time at Write the Docs Kenya Conference 2025 @WTD_Kenyatoday. Being part of the organizers was such an honor fr🔥Met friends and made new ones,amazing sessions from amazing speakers, networked and of course a good event must have goodies😂🔥Enjoyed every bit of it🫶🏽",
+      "author": "Tabby",
+      "role": "Community Organizer: Graphics Designer",
+      "company": "WTD Kenya, Nairobi DevOps",
+      "image": "https://pbs.twimg.com/profile_images/1580572280320675842/tKS_ZLva_400x400.jpg"
+    },
+    {
+      "quote": "I learnt something new today at the write the docs conference 2025. \\n Did you guys know there's something called MCP? MCP means Model Context Protocol, used when building AI assisted tools",
+      "author": "Ms. Gloriah",
+      "role": "Brand Consultant & Product Engineer",
+      "company": "The BoldBoss Consultancy",
+      "image": "https://pbs.twimg.com/profile_images/1813252352272461824/gs5b0iLa_400x400.jpg"
+    }
+  ],
+  "stats": {
+    "members": "300+",
+    "events": "25+",
+    "posts": "50+"
+  }
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "title": "WTD Kenya Conference 2025: Our First-Ever Conference - Event Recap",
+    "brief": "On June 7th, 2025, we made history at Zetech University in Nairobi by hosting the inaugural Write the Docs Kenya Conference, and what a day it was. Join us as we recap the highlights, keynotes, and unforgettable moments from this landmark event.",
+    "coverImage": "https://cdn.hashnode.com/res/hashnode/image/upload/v1749719980080/07e15718-27d3-4d90-a2d8-e25ad6c9ce7f.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    "slug": "wtd-kenya-conference-2025",
+    "publishedAt": "2025-06-13T10:00:00Z",
+    "author": {
+      "name": "Hillary Nyakundi",
+      "profilePicture": "https://cdn.hashnode.com/res/hashnode/image/upload/v1682063745392/sf6GpqiCg.png?w=500&h=500&fit=crop&crop=faces&auto=compress,format&format=webp"
+    },
+    "url": "https://wtdkenya.hashnode.dev/wtd-kenya-conference-2025"
+  },
+  {
+    "id": "2",
+    "title": "Write The Docs Kenya Summit 2024: Event Recap",
+    "brief": "The Write The Docs Kenya Summit 2024 was one of the most awaited events by the community at large, it was an opportunity for the documentarians, technical writers, and other professionals from the region to come together and share ideas.",
+    "coverImage": "https://cdn.hashnode.com/res/hashnode/image/upload/v1716840279427/3d59fb38-22e4-492c-8959-c468e9dcf6aa.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    "slug": "write-the-docs-kenya-summit-2024",
+    "publishedAt": "2024-05-28T11:30:00Z",
+    "author": {
+      "name": "Steve Murimi",
+      "profilePicture": "https://cdn.hashnode.com/res/hashnode/image/upload/v1687672986998/9cb1788b-7ce4-4654-b738-0e6fcbd9eadb.jpeg?w=500&h=500&fit=crop&crop=faces&auto=compress,format&format=webp"
+    },
+    "url": "https://wtdkenya.hashnode.dev/write-the-docs-kenya-summit-2024"
+  },
+  {
+    "id": "3",
+    "title": "Technical Translation for Global Audiences",
+    "brief": "In today's interconnected world, technical documentation plays a crucial role in facilitating the dissemination of information among global audiences.",
+    "coverImage": "https://cdn.hashnode.com/res/hashnode/image/upload/v1709239228458/1400f39d-91f3-4c98-b41e-d87bd68cba3f.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    "slug": "technical-translation-for-global-audiences",
+    "publishedAt": "2024-03-07T21:15:00Z", 
+    "author": {
+      "name": "Preston Mayieka",
+      "profilePicture": "https://cdn.hashnode.com/res/hashnode/image/upload/v1732621571989/faaf8626-0fd3-4525-b43c-c71ffb0c5aa2.png?w=200&h=200&fit=crop&crop=faces&w=500&h=500&fit=crop&crop=entropy&auto=compress,format&format=webp&auto=compress,format&format=webp"
+    },
+    "url": "https://wtdkenya.hashnode.dev/technical-translation-for-global-audiences"
+  },
+  {
+    "id": "4",
+    "title": "Breaking into Technical Writing: Insights from Our X Space Discussion",
+    "brief": "Technical writing involves crafting clear and concise instructions to communicate specific knowledge within a particular field.",
+    "coverImage": "https://cdn.hashnode.com/res/hashnode/image/upload/v1718606058442/d53b7be7-4ff0-427f-9791-a71304d11d83.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    "slug": "breaking-into-technical-writing",
+    "publishedAt": "2024-07-17T16:45:00Z",
+    "author": {
+      "name": "Steve Murimi",
+      "profilePicture": "https://cdn.hashnode.com/res/hashnode/image/upload/v1687672986998/9cb1788b-7ce4-4654-b738-0e6fcbd9eadb.jpeg?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp"
+    },
+    "url": "https://wtdkenya.hashnode.dev/breaking-into-technical-writing"
+  },
+  {
+    "id": "5",
+    "title": "Comprehensive Guide To Tensors And Fundamental Operations For Deep Learning Mastery",
+    "brief": "Tensors are like containers that are used in holding and manipulating numerical data. \n\n In TensorFlow all computations involve tensors, therefore, having a basic understanding of tensors makes the deep learning journey much easier.",
+    "coverImage": "https://cdn.hashnode.com/res/hashnode/image/upload/v1709466894093/0a409b5a-ddb9-4d00-acf0-8252c41a10bd.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    "slug": "comprehensive-guide-to-tensors-and-fundamental-operations-for-deep-learning-mastery",
+    "publishedAt": "2024-03-03T11:20:00Z",
+    "author": {
+      "name": "Kariuki Mary",
+      "profilePicture": "https://cdn.hashnode.com/res/hashnode/image/upload/v1669026178361/Lzx1xw2HW.png?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp"
+    },
+    "url": "https://wtdkenya.hashnode.dev/comprehensive-guide-to-tensors-and-fundamental-operations-for-deep-learning-mastery"
+  },
+  {
+    "id": "6",
+    "title": "API Products: Passing Trend or Mainstream Movement?",
+    "brief": "As the API economy continues to grow, we enter an era of API dominance. Application Programming Interfaces (APIs) have evolved from simple tools to becoming the fundamental building blocks of modern software.",
+    "coverImage": "https://cdn.hashnode.com/res/hashnode/image/upload/v1705643703983/61d3cdde-163b-4acf-ac1e-88931c8b46a5.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    "slug": "api-products-passing-trend-or-mainstream-movement",
+    "publishedAt": "2024-01-31T10:00:00Z",
+    "author": {
+      "name": "Alan Njogu",
+      "profilePicture": "https://cdn.hashnode.com/res/hashnode/image/upload/v1705579206461/DqVVIN0tm.png?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp"
+    },
+    "url": "https://wtdkenya.hashnode.dev/api-products-passing-trend-or-mainstream-movement"
+  }
+]
