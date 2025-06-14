@@ -6,36 +6,69 @@
   },
   "team": [
     {
-      "name": "Sarah Njeri",
-      "role": "Community Organizer",
-      "bio": "Technical writer with 5+ years of experience in fintech documentation. Passionate about making complex topics accessible.",
-      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+      "name": "Hillary Nyakundi",
+      "role": "Community Lead",
+      "bio": "Curriculum Developer @ freeCodeCamp | Technical Writer | Open Source Advocate. Passionate about empowering communities through documentation and education.",
+      "image": "https://pbs.twimg.com/profile_images/1575029259227525120/ugUQv88t_400x400.jpg",
       "social": {
-        "twitter": "https://twitter.com/sarahnjeri",
-        "linkedin": "https://linkedin.com/in/sarahnjeri",
-        "instagram": "https://instagram.com/sarahnjeri"
+        "twitter": "https://x.com/larymak1",
+        "linkedin": "https://www.linkedin.com/in/hillary-nyakundi/",
+        "instagram": "https://instagram.com/larymak1"
       }
     },
     {
-      "name": "Michael Ochieng",
-      "role": "Events Coordinator",
-      "bio": "Software developer turned documentation advocate. Specializes in API documentation and developer experience.",
-      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+      "name": "Kevin Tuei",
+      "role": "Community Organizer",
+      "bio": "Cloud Developer | Coordinator, ODeL  | ALX Gold Fellow  | Atlassian Community Leader  | AWS Community Builder | IEEE/ISACA/PMI Member | Certified Educator.",
+      "image": "https://pbs.twimg.com/profile_images/1737190672078176256/nurAQ2yT_400x400.jpg",
       "social": {
-        "twitter": "https://twitter.com/michaelochieng",
-        "linkedin": "https://linkedin.com/in/michaelochieng",
+        "twitter": "https://x.com/kevshakes",
+        "linkedin": "https://www.linkedin.com/in/kevintuei/",
         "instagram": "https://instagram.com/michaelochieng"
       }
     },
     {
-      "name": "Grace Wanjiku",
-      "role": "Content Lead",
-      "bio": "UX writer and content strategist focused on inclusive design and accessibility in documentation.",
-      "image": "https://images.unsplash.com/photo-1494790108755-2616b9448bb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+      "name": "Samuel Macharia",
+      "role": "Event Organizer",
+      "bio": "Cloud DevOps Engineer | Community Advocate | Technical Writer | Open Source Contributor. Passionate about building scalable systems and empowering communities through technology.",
+      "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1748344255132/1c19dc70-71a6-4904-9f91-6ee8b245b92e.jpeg?w=500&h=500&fit=crop&crop=faces&w=500&h=500&fit=crop&crop=entropy&auto=compress,format&format=webp&auto=compress,format&format=webp",
       "social": {
-        "twitter": "https://twitter.com/gracewanjiku",
-        "linkedin": "https://linkedin.com/in/gracewanjiku",
-        "instagram": "https://instagram.com/gracewanjiku"
+        "twitter": "https://x.com/engeniusam",
+        "linkedin": "https://www.linkedin.com/in/engeniusam/",
+        "instagram": "https://instagram.com/engeniusam"
+      }
+    },
+    {
+      "name": "Tabitha Margare",
+      "role": "Graphics Designer",
+      "bio": "UI/UX designer | Graphics Designer | Community manager | Passionate about creating user-centered designs and enhancing community engagement through visual storytelling.",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQFHGBtLPcdXiQ/profile-displayphoto-shrink_200_200/B4DZXwhvr4GkAc-/0/1743497134100?e=1755129600&v=beta&t=kWC4pGJZ2CDtJAFu3tcRBT-iO-P54xJDwqvuV_mKyIM",
+      "social": {
+        "twitter": "https://x.com/_mWangechi",
+        "linkedin": "https://www.linkedin.com/in/tabitha-margaret771/",
+        "instagram": "https://instagram.com/_mWangechi"
+      }
+    },
+    {
+      "name": "Ian Kiprotich",
+      "role": "Event Organizer",
+      "bio": "System Administrator | Community Manager | Platform Engineer | Passionate about building resilient systems and fostering community growth through effective documentation and collaboration.",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQG0HvKZs5dsUA/profile-displayphoto-shrink_200_200/B4DZRHAqJnHkAY-/0/1736358422703?e=1755129600&v=beta&t=9sJJbOpKmev4fPHWFELQXsA6Cg6TPsWdeBhXy4X2Fsw",
+      "social": {
+        "twitter": "https://x.com/Onai_erd",
+        "linkedin": "https://www.linkedin.com/in/iankiprotich/",
+        "instagram": "https://instagram.com/Onai_erd"
+      }
+    },
+    {
+      "name": "Lawrence Juma",
+      "role": "Partnership",
+      "bio": "Virtual Assistant | Community Manager | Product Manager | Passionate about building strong partnerships and enhancing community engagement through effective communication and collaboration.",
+      "image": "https://pbs.twimg.com/profile_images/1831594845141454848/EMb5-8CN_400x400.jpg",
+      "social": {
+        "twitter": "https://x.com/jumalaw98",
+        "linkedin": "https://www.linkedin.com/in/jumalaw98/",
+        "instagram": "https://instagram.com/jumalaw98"
       }
     }
   ],
@@ -53,6 +86,13 @@
       "role": "Brand Consultant & Product Engineer",
       "company": "The BoldBoss Consultancy",
       "image": "https://pbs.twimg.com/profile_images/1813252352272461824/gs5b0iLa_400x400.jpg"
+    },
+    {
+      "quote": "I had the opportunity to volunteer at the  Conference 2025 held at Zetech University, and it was an incredible experience.",
+      "author": "Alois Gitau",
+      "role": "Student & Volunteer",
+      "company": "Zetech University",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQG3Ae3zsSnDAg/profile-displayphoto-shrink_100_100/B4DZYRp7ljHIAU-/0/1744052928050?e=1755129600&v=beta&t=DR6RaIARr-UnOScu-tfyI4S9HBg4mSBEADdnFhWqQHw"
     }
   ],
   "stats": {
