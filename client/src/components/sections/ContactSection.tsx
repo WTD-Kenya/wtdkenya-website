@@ -68,11 +68,11 @@ export default function ContactSection() {
             <div className="mt-8 space-y-6">
               <div className="flex items-center">
                 <i className="fas fa-envelope text-kenya-red text-xl mr-4"></i>
-                <span className="text-gray-300">hello@writethedocs.ke</span>
+                <span className="text-gray-300">wtdkenya@gmail.com</span>
               </div>
               
               <div className="flex space-x-6">
-                <a href="https://twitter.com/writethedocs_ke" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
+                {/* <a href="https://twitter.com/writethedocs_ke" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                   <i className="fab fa-x-twitter text-2xl"></i>
                 </a>
                 <a href="https://linkedin.com/company/write-the-docs-kenya" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
@@ -83,8 +83,22 @@ export default function ContactSection() {
                 </a>
                 <a href="https://meetup.com/write-the-docs-kenya" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-red-500 transition-colors">
                   <i className="fab fa-meetup text-2xl"></i>
+                </a> */}
+                  <a href="https://www.linkedin.com/company/write-the-docs-kenya/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
+                  <i className="fab fa-linkedin text-xl"></i>
                 </a>
-                <a href="https://github.com/write-the-docs-kenya" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-300 transition-colors">
+                {/* <a href="https://instagram.com/writethedocs_ke" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors">
+                  <i className="fab fa-instagram text-xl"></i>
+                </a> */}
+                <a href="https://www.meetup.com/wtd-kenya/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-red-500 transition-colors">
+                  <i className="fab fa-meetup text-xl"></i>
+                </a>
+                <a href="https://x.com/WTD_Kenya" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" fill="currentColor" className="w-6 h-6 text-xl">
+                    <path d="M1200 24.6L726.6 624.2L1193.2 1202.4H1042.6L677.2 759.6L349.4 1202.4H0L495.2 563.2L56.8 24.6H211.6L544.2 432.2L849.8 24.6H1200ZM978.6 1144.8L406.2 432.2L154.2 1144.8H309.2L626.6 721.6L978.6 1144.8ZM221.8 123.2L857.2 1144.8H1045.8L409.8 123.2H221.8Z"/>
+                  </svg>
+                </a>
+                <a href="https://github.com/WTD-Kenya" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-300 transition-colors">
                   <i className="fab fa-github text-2xl"></i>
                 </a>
               </div>
