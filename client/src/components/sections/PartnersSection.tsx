@@ -42,22 +42,24 @@ export default function PartnersSection() {
     }
   ];
 
+  // Show 4 partners per slide
+  const partnersPerSlide = 4;
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % Math.ceil(partners.length / 3));
+      setCurrentSlide((prev) => (prev + 1) % Math.ceil(partners.length / partnersPerSlide));
     }, 4000);
 
     return () => clearInterval(interval);
   }, [partners.length]);
 
   const getVisiblePartners = () => {
-    const partnersPerSlide = 3;
     const startIndex = currentSlide * partnersPerSlide;
     return partners.slice(startIndex, startIndex + partnersPerSlide);
   };
 
   return (
-    <section className="py-16 bg-gray-50 overflow-hidden">
+    <section className="py-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Our Partners & Supporters</h2>
@@ -78,7 +80,7 @@ export default function PartnersSection() {
                   href={partner.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="block p-6 bg-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   <img
                     src={partner.logo}
@@ -92,7 +94,7 @@ export default function PartnersSection() {
 
           {/* Carousel indicators */}
           <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: Math.ceil(partners.length / 3) }).map((_, index) => (
+            {Array.from({ length: Math.ceil(partners.length / partnersPerSlide) }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}

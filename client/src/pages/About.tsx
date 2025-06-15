@@ -23,7 +23,7 @@ export default function About() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-gray-50 to-white py-20">
+        {/* <section className="bg-gradient-to-br from-gray-50 to-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
               Building a Stronger Tech Writing Community in Kenya
@@ -32,7 +32,23 @@ export default function About() {
               We connect documentarians, writers, and developers for collaboration and growth.
             </p>
           </div>
-        </section>
+        </section> */}
+        <section className="bg-black py-20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 className="text-4xl font-bold text-white sm:text-5xl">
+      Building a Stronger Tech Writing Community in{" "}
+      <span>
+        <span className="text-kenya-red">KE</span>
+        <span className="text-kenya-green">NYA</span>
+      </span>
+    </h1>
+    <p className="mt-6 text-xl text-gray-200 max-w-3xl mx-auto">
+      We connect documentarians, writers, and developers for collaboration and growth.
+    </p>
+  </div>
+</section>
+
+      
 
         {data && (
           <>
@@ -52,7 +68,7 @@ export default function About() {
                   </div>
                   <div className="mt-10 lg:mt-0">
                     <img 
-                      src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                      src="https://media.licdn.com/dms/image/v2/D5622AQELd9VYjOr90g/feedshare-shrink_2048_1536/B56ZdY9WDRGsAs-/0/1749544325106?e=1752710400&v=beta&t=tfqkt4hEculyeWV1ilTJtm3J1cUzQruxAM0BvwycVWc" 
                       alt="Team collaboration" 
                       className="rounded-xl shadow-lg"
                     />
@@ -201,6 +217,28 @@ export default function About() {
                   Join our growing community of documentation enthusiasts and help shape the future of technical writing in Kenya.
                 </p>
                 <div className="mt-8 space-x-4">
+                  <a
+                    href="https://linktr.ee/wtd_kenya" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="bg-white text-kenya-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                      <i className="fas fa-users mr-2"></i>
+                      Join the Community
+                    </button>
+                  </a>
+                  <a
+                    href="https://writedocskenya.org/speak" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-kenya-red transition-colors">
+                      <i className="fas fa-microphone mr-2"></i>
+                      Speak at an Event
+                    </button>
+                  </a>
+                </div>
+                {/* <div className="mt-8 space-x-4">
                   <button className="bg-white text-kenya-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                     <i className="fas fa-users mr-2"></i>
                     Join the Community
@@ -209,7 +247,7 @@ export default function About() {
                     <i className="fas fa-microphone mr-2"></i>
                     Speak at an Event
                   </button>
-                </div>
+                </div> */}
               </div>
             </section>
           </>
