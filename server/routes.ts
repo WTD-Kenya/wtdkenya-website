@@ -76,8 +76,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Hashnode API proxy
   app.get("/api/blog", async (req, res) => {
     try {
-      const hashnodeApiKey = process.env.HASHNODE_API_KEY || process.env.VITE_HASHNODE_API_KEY;
-      
       // Hashnode GraphQL query
       const query = `
         query GetPosts($host: String!) {
@@ -106,48 +104,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
       `;
 
       const variables = {
-        host: "https://wtdkenya.hashnode.dev/" 
-        // hashnode publication host
+        host: "wtdkenya.hashnode.dev"
+
+        // host: "wtdkenya.hashnode.dev" // Use just the subdomain, not the full URL
       };
 
-      const response = await fetch('https://gql.hashnode.com/', {
-        method: 'POST',
+      const response = await fetch("https://gql.hashnode.com", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          ...(hashnodeApiKey ? { 'Authorization': `Bearer ${hashnodeApiKey}` } : {})
+          "Content-Type": "application/json"
+          // No API key needed for public blogs
         },
         body: JSON.stringify({ query, variables })
       });
 
-      if (!response.ok) {
-        throw new Error(`Hashnode API error: ${response.status}`);
-      }
-
       const data = await response.json();
-      
-      if (data.errors) {
-        throw new Error(`Hashnode GraphQL errors: ${JSON.stringify(data.errors)}`);
-      }
-
-      // Transform Hashnode data to our format
-      const posts: HashnodePost[] = data.data?.publication?.posts?.edges?.map((edge: any) => ({
-        id: edge.node.id,
-        title: edge.node.title,
-        brief: edge.node.brief,
-        coverImage: edge.node.coverImage?.url,
-        slug: edge.node.slug,
-        publishedAt: edge.node.publishedAt,
-        author: {
-          name: edge.node.author.name,
-          profilePicture: edge.node.author.profilePicture
-        },
-        url: edge.node.url
-      })) || [];
-
+      const posts = data.data?.publication?.posts?.edges?.map((edge: any) => edge.node) || [];
       res.json(posts);
-    } catch (error) {
-      console.error('Hashnode API error:', error);
-      res.status(500).json({ error: "Failed to fetch blog posts from Hashnode API" });
+    } catch (err) {
+      console.error("Hashnode fetch error:", err);
+      res.status(500).json({ error: "Failed to fetch blog posts from Hashnode" });
     }
   });
 

@@ -48,7 +48,7 @@ export default function EventGallery() {
                 alt={items[idx].caption}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 style={{ minHeight: 180 }}
-              />
+            />
               {/* Gradient overlay */}
               <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                 <span className="text-white text-base font-medium px-4 pb-2 drop-shadow-lg">
