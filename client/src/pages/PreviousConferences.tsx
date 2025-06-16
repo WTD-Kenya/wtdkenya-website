@@ -1,11 +1,53 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
+interface Speaker {
+  id: number;
+  name: string;
+  title: string;
+  company: string;
+  linkedin?: string;
+  x?: string;
+  topic: string;
+  image: string;
+  slides: string;
+  recording: string;
+}
+
+interface AllTimeSpeaker {
+  id: number;
+  name: string;
+  image: string;
+  linkedin?: string;
+  x?: string;
+}
+
+interface YearData {
+  speakers: Speaker[];
+  theme?: string;
+  date?: string;
+  location?: string;
+}
+
+interface ConferenceData {
+  [key: string]: YearData | AllTimeSpeaker[];
+  allTimeSpeakers: AllTimeSpeaker[];
+}
+
+function shortYear(year: string) {
+  // Handles years like '2024' -> '’24', '2011 Bran' -> '’11 Bran'
+  const match = year.match(/^(\d{4})\s?(.*)$/);
+  if (match) {
+    const y = match[1].slice(2);
+    return `’${y}${match[2] ? ' ' + match[2] : ''}`;
+  }
+  return year;
+}
+
 export default function PreviousConferences() {
-  const [data, setData] = useState<any>(null);
-  const [selectedYear, setSelectedYear] = useState("2023");
+  const [data, setData] = useState<ConferenceData | null>(null);
+  const [selectedYear, setSelectedYear] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,6 +59,9 @@ export default function PreviousConferences() {
       })
       .then((json) => {
         setData(json);
+        // Set the first year as default selected year
+        const years = Object.keys(json).filter(key => key !== "allTimeSpeakers");
+        setSelectedYear(years[0]);
         setLoading(false);
       })
       .catch((err) => {
@@ -29,7 +74,13 @@ export default function PreviousConferences() {
   if (error) return <div className="text-center py-16 text-red-500">{error}</div>;
   if (!data) return null;
 
-  const years = Object.keys(data).filter((key) => key !== "allTimeSpeakers");
+  // Get all years except 'allTimeSpeakers'
+  const years = Object.keys(data).filter(key => key !== "allTimeSpeakers").sort((a, b) => Number(b) - Number(a));
+
+  // Type guard to check if the data for a year is YearData
+  const isYearData = (data: YearData | AllTimeSpeaker[]): data is YearData => {
+    return 'speakers' in data;
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -43,16 +94,55 @@ export default function PreviousConferences() {
         </p>
       </section>
 
-      {/* Year Selection Section */}
+      {/* Year Selection Section - Custom UI */}
       <section className="mb-16">
-        <Tabs defaultValue={years[0]} className="w-full" onValueChange={setSelectedYear}>
-          <TabsList className={`grid w-full grid-cols-${years.length}`}>
-            {years.map((year) => (
-              <TabsTrigger key={year} value={year}>{year}</TabsTrigger>
-            ))}
-          </TabsList>
-        </Tabs>
+        <div className="bg-[#e4e9ee] rounded-lg py-6 px-2 flex flex-wrap justify-center items-center gap-y-4">
+          {years.map((year, idx) => (
+            <span key={year} className="flex items-center">
+              <button
+                onClick={() => setSelectedYear(year)}
+                className={`text-lg font-bold px-2 focus:outline-none transition-colors
+                  ${selectedYear === year
+                    ? 'text-orange-600 underline underline-offset-4 decoration-2'
+                    : 'text-blue-700 hover:underline hover:text-orange-600'}
+                `}
+                style={{ fontFamily: 'inherit' }}
+              >
+                {shortYear(year)}
+              </button>
+              {idx !== years.length - 1 && (
+                <span className="text-gray-300 text-2xl px-1 select-none">/</span>
+              )}
+            </span>
+          ))}
+        </div>
       </section>
+
+      {/* Year Details Section */}
+      {selectedYear && isYearData(data[selectedYear]) && (
+        <section className="mb-10 flex justify-center">
+          <div className="bg-white shadow rounded-lg px-6 py-4 flex flex-col md:flex-row gap-4 md:gap-8 items-center border border-gray-200">
+            {data[selectedYear].theme && (
+              <div className="text-center md:text-left">
+                <div className="text-xs text-gray-500 uppercase tracking-wider">Theme</div>
+                <div className="font-semibold text-gray-800">{data[selectedYear].theme}</div>
+              </div>
+            )}
+            {data[selectedYear].date && (
+              <div className="text-center md:text-left">
+                <div className="text-xs text-gray-500 uppercase tracking-wider">Date</div>
+                <div className="font-semibold text-gray-800">{data[selectedYear].date}</div>
+              </div>
+            )}
+            {data[selectedYear].location && (
+              <div className="text-center md:text-left">
+                <div className="text-xs text-gray-500 uppercase tracking-wider">Location</div>
+                <div className="font-semibold text-gray-800">{data[selectedYear].location}</div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Speaker Cards Section (Table-like UI) */}
       <section className="mb-16">
@@ -64,7 +154,7 @@ export default function PreviousConferences() {
             <div className="w-1/3 flex items-center">Media Resources & Docs</div>
           </div>
           {/* Speaker Rows */}
-          {data[selectedYear]?.speakers?.map((speaker: any, idx: number) => (
+          {selectedYear && isYearData(data[selectedYear]) && data[selectedYear].speakers.map((speaker: Speaker, idx: number) => (
             <div
               key={speaker.id}
               className={`flex flex-col md:flex-row items-start md:items-center px-4 md:px-6 py-4 md:py-6 gap-4 md:gap-0 border-t border-gray-100 ${idx % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
@@ -129,31 +219,39 @@ export default function PreviousConferences() {
       </section>
 
       {/* All-time Speakers Gallery */}
-      <section>
-        <h2 className="text-3xl font-bold text-center mb-8">All-time Speakers</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {data.allTimeSpeakers?.map((speaker: any) => (
-            <TooltipProvider key={speaker.id}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div className="relative group cursor-pointer">
-                    <img
-                      src={speaker.image}
-                      alt={speaker.name}
-                      className="w-full h-48 object-cover rounded-lg transition-transform group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity rounded-lg flex items-center justify-center">
-                      <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity font-semibold">
-                        {speaker.name}
-                      </span>
-                    </div>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{speaker.name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+      <section className="mt-20">
+        <h2 className="text-4xl font-extrabold text-center mb-2 tracking-tight">PAST ALL TIMESPEAKERS</h2>
+        <div className="flex justify-center mb-2">
+          <span className="h-1 w-16 bg-green-500 rounded-full"></span>
+        </div>
+        <div className="text-center text-lg mb-10">
+          Global <span className="text-green-600 font-semibold">Conference</span> Speakers Event
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          {data.allTimeSpeakers?.map((speaker: AllTimeSpeaker) => (
+            <div key={speaker.id} className="relative group cursor-pointer rounded overflow-hidden bg-white shadow-sm">
+              <img
+                src={speaker.image}
+                alt={speaker.name}
+                className="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition duration-300"
+              />
+              {/* Overlay on hover */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 px-2 py-3 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-white font-semibold text-sm mb-1 text-center">{speaker.name}</span>
+                <div className="flex gap-2">
+                  {speaker.linkedin && (
+                    <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" className="text-blue-400 hover:text-blue-600"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.034 0 3.595 1.997 3.595 4.59v5.606z"/></svg>
+                    </a>
+                  )}
+                  {speaker.x && (
+                    <a href={speaker.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" className="text-gray-200 hover:text-black"><path d="M17.53 2.47a.75.75 0 0 1 1.06 1.06l-5.22 5.22 2.94 2.94 5.22-5.22a.75.75 0 1 1 1.06 1.06l-5.22 5.22 5.22 5.22a.75.75 0 1 1-1.06 1.06l-5.22-5.22-2.94 2.94 5.22 5.22a.75.75 0 1 1-1.06 1.06l-5.22-5.22-5.22 5.22a.75.75 0 1 1-1.06-1.06l5.22-5.22-2.94-2.94-5.22 5.22a.75.75 0 1 1-1.06-1.06l5.22-5.22-5.22-5.22a.75.75 0 1 1 1.06-1.06l5.22 5.22 2.94-2.94-5.22-5.22a.75.75 0 1 1 1.06-1.06l5.22 5.22 5.22-5.22z"/></svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </section>

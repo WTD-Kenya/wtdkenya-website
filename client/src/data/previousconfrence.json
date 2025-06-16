@@ -1,5 +1,8 @@
 {
   "2023": {
+    "theme": "The Future of Documentation",
+    "date": "March 10-12, 2023",
+    "location": "Nairobi, Kenya",
     "speakers": [
       {
         "id": 1,
@@ -16,6 +19,9 @@
     ]
   },
   "2024": {
+    "theme": "AI and Docs",
+    "date": "April 15-17, 2024",
+    "location": "Mombasa, Kenya",
     "speakers": [
       {
         "id": 2,
@@ -32,6 +38,9 @@
     ]
   },
   "2025": {
+    "theme": "Open Source Docs Evolution",
+    "date": "May 20-22, 2025",
+    "location": "Kisumu, Kenya",
     "speakers": [
       {
         "id": 3,
