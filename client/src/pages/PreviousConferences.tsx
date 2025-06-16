@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 interface Speaker {
   id: number;
@@ -84,6 +86,7 @@ export default function PreviousConferences() {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <Navbar />
       {/* Hero Section */}
       <section className="text-center mb-16">
         <h1 className="text-4xl font-bold mb-4">Previous Conferences</h1>
@@ -255,6 +258,7 @@ export default function PreviousConferences() {
           ))}
         </div>
       </section>
+      <Footer />
     </div>
   );
 } 

@@ -155,27 +155,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // This endpoint fetches optimized image URLs from a specific Cloudinary folder
   app.get("/api/gallery", async (req, res) => {
     try {
-      const folder = "wtdsummit2025"; 
-      // Search for images in the specified folder
+      const folder = "wtdsummit2025";
       const result = await cloudinary.search
-        .expression(`folder:${folder}`)
+        .expression(`folder:${folder} AND resource_type:image`)
         .sort_by("public_id", "desc")
         .max_results(30)
         .execute();
 
-      // Map and optimize images for web (400x300, auto quality/format)
-      const images = result.resources.map((img: any) =>
-        cloudinary.url(img.public_id, {
-          width: 400,
-          height: 300,
-          crop: "fill",
-          quality: "auto",
-          fetch_format: "auto",
-        })
-      );
+      // Map to { image, caption }
+      const images = result.resources.map((img: any) => ({
+        image: img.secure_url,
+        caption: img.context?.custom?.caption || img.public_id.split("/").pop().replace(/[-_]/g, " ").replace(/\.[^/.]+$/, ""),
+      }));
+
       res.json(images);
     } catch (err) {
-      console.error("Cloudinary API error:", err);
+      console.error("Cloudinary fetch error:", err);
       res.status(500).json({ error: "Failed to fetch images from Cloudinary" });
     }
   });
