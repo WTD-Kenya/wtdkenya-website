@@ -7,7 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
 // import EventGallery from "@/components/EventGallery"; // Import the new component
-import Event_Gallery from "@/components/sections/Event_Gallery";
+import Event_Gallery from "@/components/Event_Gallery.tsx";
 import type { MeetupEvent } from "@/lib/types";
 
 export default function Events() {
