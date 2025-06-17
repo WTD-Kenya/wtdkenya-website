@@ -1,0 +1,60 @@
+{
+  "images": [
+    {
+      "image": "/images/gallery/event1.jpg",
+      "caption": "WTD Kenya Conference 2024 - Opening Ceremony",
+      "fallbackImage": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
+      "note": "Local image path (in public folder) with remote fallback"
+    },
+    {
+      "image": "/images/gallery/event2.jpg",
+      "caption": "Technical Writing Workshop - Hands-on Session",
+      "fallbackImage": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&auto=format&fit=crop&q=60",
+      "note": "Local image path (in public folder) with remote fallback"
+    },
+    {
+      "image": "/images/gallery/event3.jpg",
+      "caption": "Community Meetup - Networking Session",
+      "fallbackImage": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&auto=format&fit=crop&q=60",
+      "note": "Local image path (in public folder) with remote fallback"
+    },
+    {
+      "image": "/images/gallery/event4.jpg",
+      "caption": "Documentation Sprint - Collaborative Writing",
+      "fallbackImage": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=60",
+      "note": "Local image path (in public folder) with remote fallback"
+    },
+    {
+      "image": "/images/gallery/event5.jpg",
+      "caption": "Panel Discussion - Future of Technical Writing",
+      "fallbackImage": "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&auto=format&fit=crop&q=60",
+      "note": "Local image path (in public folder) with remote fallback"
+    },
+    {
+      "image": "/images/gallery/event6.jpg",
+      "caption": "WTD Kenya Summit - Group Photo",
+      "fallbackImage": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&auto=format&fit=crop&q=60",
+      "note": "Local image path (in public folder) with remote fallback"
+    }
+  ],
+  "notes": {
+    "imageSources": [
+      "Local images should be placed in the public/images/gallery directory",
+      "Remote images should be from a reliable CDN or image hosting service",
+      "For optimal performance, use images with width around 800px",
+      "Consider using WebP format for better compression",
+      "Always provide alt text for accessibility"
+    ],
+    "imageOptimization": [
+      "Use responsive images with srcset for different screen sizes",
+      "Implement lazy loading for images below the fold",
+      "Consider using a CDN for faster delivery",
+      "Compress images before deployment"
+    ],
+    "usage": [
+      "Local images: Place in public/images/gallery and reference as /images/gallery/filename.jpg",
+      "Remote images: Use full URL with proper CDN parameters",
+      "Fallback images: Provide both local and remote options for reliability"
+    ]
+  }
+} 
