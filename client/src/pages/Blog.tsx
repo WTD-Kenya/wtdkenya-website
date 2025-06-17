@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,21 +7,21 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
 import type { HashnodePost } from "@/lib/types";
+import { useHashnodePosts } from "@/hooks/useHashnodePosts";
+
+
 
 export default function Blog() {
-  const { data: posts, isLoading, error } = useQuery<HashnodePost[]>({
-    queryKey: ["/api/blog"],
-  });
-  
+  const { data: posts, isLoading, error } = useHashnodePosts();
   const [samplePosts, setSamplePosts] = useState<HashnodePost[]>([]);
-  
+
   useEffect(() => {
     import("@/data/sampleBlogs.json").then((module) => {
       const shuffled = [...module.default].sort(() => 0.5 - Math.random());
       setSamplePosts(shuffled);
     });
   }, []);
-  
+
   const displayPosts = posts && posts.length > 0 ? posts : samplePosts;
 
   return (
@@ -85,7 +84,7 @@ export default function Blog() {
               </div>
             )}
             
-            {error && posts?.length === 0 && (
+            {error && (!posts || posts.length === 0) && (
               <Alert className="max-w-md mx-auto">
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>
@@ -108,7 +107,7 @@ export default function Blog() {
             
             {displayPosts && displayPosts.length > 0 && (
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {displayPosts.map((post) => (
+                {displayPosts.map((post: HashnodePost) => (
                   <BlogCard key={post.id} post={post} />
                 ))}
               </div>

@@ -1,0 +1,64 @@
+{
+  "2023": {
+    "theme": "The Future of Documentation",
+    "date": "March 10-12, 2023",
+    "location": "Nairobi, Kenya",
+    "speakers": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "title": "Senior Developer",
+        "company": "TechCorp",
+        "linkedin": "https://linkedin.com/in/johndoe",
+        "x": "https://x.com/johndoe",
+        "topic": "Technical Writing Best Practices",
+        "image": "/speakers/john-doe.jpg",
+        "slides": "https://slides.com/johndoe",
+        "recording": "https://youtube.com/watch?v=123"
+      }
+    ]
+  },
+  "2024": {
+    "theme": "AI and Docs",
+    "date": "April 15-17, 2024",
+    "location": "Mombasa, Kenya",
+    "speakers": [
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "title": "Documentation Lead",
+        "company": "DocsPro",
+        "linkedin": "https://linkedin.com/in/janesmith",
+        "x": "https://x.com/janesmith",
+        "topic": "API Documentation Strategies",
+        "image": "/speakers/jane-smith.jpg",
+        "slides": "https://slides.com/janesmith",
+        "recording": "https://youtube.com/watch?v=456"
+      }
+    ]
+  },
+  "2025": {
+    "theme": "Open Source Docs Evolution",
+    "date": "May 20-22, 2025",
+    "location": "Kisumu, Kenya",
+    "speakers": [
+      {
+        "id": 3,
+        "name": "Mike Johnson",
+        "title": "Technical Writer",
+        "company": "WriteWell",
+        "linkedin": "https://linkedin.com/in/mikejohnson",
+        "x": "https://x.com/mikejohnson",
+        "topic": "Modern Documentation Tools",
+        "image": "/speakers/mike-johnson.jpg",
+        "slides": "https://slides.com/mikejohnson",
+        "recording": "https://youtube.com/watch?v=789"
+      }
+    ]
+  },
+  "allTimeSpeakers": [
+    { "id": 1, "name": "John Doe", "image": "/speakers/john-doe.jpg" },
+    { "id": 2, "name": "Jane Smith", "image": "/speakers/jane-smith.jpg" },
+    { "id": 3, "name": "Mike Johnson", "image": "/speakers/mike-johnson.jpg" }
+  ]
+} 

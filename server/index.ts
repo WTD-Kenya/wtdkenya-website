@@ -1,6 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+// import galleryRoutes from "./routes"; // or wherever you put the above code
 
 // Import dotenv to load .env variables (for Cloudinary, etc.)
 import dotenv from "dotenv";
@@ -72,4 +73,7 @@ app.use((req, res, next) => {
       log(`serving on port ${port}`);
     }
   );
+
+  // Register gallery routes
+  app.use(galleryRoutes);
 })();

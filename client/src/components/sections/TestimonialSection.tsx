@@ -17,6 +17,20 @@ export default function TestimonialSection() {
       .catch(() => setTestimonials([]));
   }, []);
 
+  // Number of cards to show at once
+  const cardsToShow = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 2;
+
+  // Responsive: update cardsToShow on resize
+  useEffect(() => {
+    const handleResize = () => {
+      // Force re-render on resize
+      setCurrent((c) => c);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Auto-slide logic
   useEffect(() => {
     if (!testimonials.length) return;
     if (isPaused) {
@@ -24,12 +38,12 @@ export default function TestimonialSection() {
       return;
     }
     intervalRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
+      setCurrent((prev) => (prev + cardsToShow) % testimonials.length);
+    }, 5000);
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [testimonials, isPaused]);
+  }, [testimonials, isPaused, cardsToShow]);
 
   if (!testimonials.length) {
     return (
@@ -39,61 +53,66 @@ export default function TestimonialSection() {
     );
   }
 
+  // Helper to get the visible testimonials
+  const getVisibleTestimonials = () => {
+    const visible: Testimonial[] = [];
+    for (let i = 0; i < cardsToShow; i++) {
+      visible.push(testimonials[(current + i) % testimonials.length]);
+    }
+    return visible;
+  };
+
+  // Arrow navigation
+  const handlePrev = () => {
+    setCurrent((prev) => (prev - cardsToShow + testimonials.length) % testimonials.length);
+  };
+  const handleNext = () => {
+    setCurrent((prev) => (prev + cardsToShow) % testimonials.length);
+  };
+
   return (
-    <div className="mt-16">
-      <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">What Our Members Say</h3>
-      <div
-        className="relative max-w-2xl mx-auto"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        <div className="overflow-hidden">
-          <div
-            className="flex transition-transform duration-700 ease-in-out"
-            style={{
-              transform: `translateX(-${current * 100}%)`,
-              width: `${testimonials.length * 100}%`,
-            }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="w-full flex-shrink-0 px-2"
-                style={{ minWidth: "100%" }}
-              >
-                <blockquote className="bg-white rounded-xl shadow-lg p-8">
-                  <p className="text-gray-600 text-lg italic">"{testimonial.quote}"</p>
-                  <div className="mt-6 flex items-center">
-                    <img
-                      src={testimonial.image}
-                      alt={`${testimonial.author} testimonial`}
-                      className="h-12 w-12 rounded-full object-cover"
-                    />
-                    <div className="ml-4">
-                      <div className="font-medium text-gray-900">{testimonial.author}</div>
-                      <div className="text-gray-500">
-                        {testimonial.role}, {testimonial.company}
-                      </div>
-                    </div>
-                  </div>
-                </blockquote>
-              </div>
-            ))}
+    <section className="w-full bg-gradient-to-br from-gray-50 to-white py-20">
+      {/* bg-gradient-to-br from-gray-50 to-white py-20 /// bg-[#e4e9ee] py-16 */}
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-center justify-between mb-10">
+          <h2 className="text-4xl font-extrabold text-left text-[#d6f5d6]" style={{color:'#d6f5d6'}}>
+          {/* text-3xl font-bold text-gray-900 sm:text-4xl mb-12 //// text-4xl font-extrabold text-left text-[#d6f5d6]*/}
+            Why they love Write the Docs Kenya
+          </h2>
+          <div className="flex items-center gap-2">
+            <button
+              aria-label="Previous testimonials"
+              onClick={handlePrev}
+              className="rounded-full bg-white text-gray-700 hover:bg-gray-200 shadow p-2 transition-colors border border-gray-300"
+            >
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button
+              aria-label="Next testimonials"
+              onClick={handleNext}
+              className="rounded-full bg-white text-gray-700 hover:bg-gray-200 shadow p-2 transition-colors border border-gray-300"
+            >
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            </button>
           </div>
         </div>
-        {/* Carousel indicators */}
-        <div className="flex justify-center mt-6 space-x-2">
-          {testimonials.map((_, idx) => (
-            <button
+        <div
+          className="flex flex-col md:flex-row gap-8"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {getVisibleTestimonials().map((testimonial, idx) => (
+            <div
               key={idx}
-              onClick={() => setCurrent(idx)}
-              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                idx === current ? "bg-accent-orange" : "bg-gray-300"
-              }`}
-            />
+              className="bg-white rounded-lg shadow p-6 flex-1 min-w-0"
+            >
+              <p className="text-gray-800 text-lg mb-6">{testimonial.quote}</p>
+              <div className="font-semibold text-gray-900">{testimonial.author}</div>
+              <div className="text-gray-500 italic">{testimonial.company}</div>
+            </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
