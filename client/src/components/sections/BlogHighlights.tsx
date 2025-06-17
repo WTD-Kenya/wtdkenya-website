@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -7,12 +6,10 @@ import { AlertCircle } from "lucide-react";
 import BlogCard from "@/components/BlogCard";
 import { Link } from "wouter";
 import type { HashnodePost } from "@/lib/types";
+import { useHashnodePosts } from "@/hooks/useHashnodePosts";
 
 export default function BlogHighlights() {
-  const { data: posts, isLoading, error } = useQuery<HashnodePost[]>({
-    queryKey: ["/api/blog"],
-  });
-  
+  const { data: posts, isLoading, error } = useHashnodePosts();
   const [samplePosts, setSamplePosts] = useState<HashnodePost[]>([]);
   
   useEffect(() => {
@@ -56,7 +53,7 @@ export default function BlogHighlights() {
             </div>
           )}
           
-          {error && posts?.length === 0 && (
+          {error && (!posts || posts.length === 0) && (
             <Alert className="max-w-md mx-auto">
               <AlertCircle className="h-4 w-4" />
               <AlertDescription>

@@ -58,7 +58,7 @@ cd client
 npm install
 npm run dev
 ```
-- The app will be available at `http://localhost:5173` (or as specified by Vite).
+- The app will be available at `http://localhost:4000` (or as specified by Vite).
 
 ---
 
