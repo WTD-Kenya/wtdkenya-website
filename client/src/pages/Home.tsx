@@ -7,7 +7,7 @@ import BlogHighlights from "@/components/sections/BlogHighlights";
 import CommunitySection from "@/components/sections/CommunitySection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
-import ContactSection from "@/components/sections/ContactSection";
+// import ContactSection from "@/components/sections/ContactSection";
 import FAQ from "@/components/sections/FAQ";
 
 export default function Home() {
