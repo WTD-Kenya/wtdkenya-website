@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import type { TeamMember } from "@/lib/types";
+import { useLocation } from "wouter";
 
 export default function About() {
   const [data, setData] = useState<{ 
     about: { mission: string; vision: string; description: string }; 
     team: TeamMember[] 
   } | null>(null);
+  const [location, setLocation] = useLocation();
 
   useEffect(() => {
     import("@/data/static.json").then((module) => {
@@ -150,87 +152,76 @@ export default function About() {
 
             {/* Team Members */}
             <section className="py-16 bg-gray-50">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Meet Our Organizers</h2>
-                  <p className="mt-4 text-xl text-gray-600">The passionate people behind our community</p>
-                </div>
-                
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                  {data.team.map((member, index) => (
-                    <div
-                      key={index}
-                      className="relative bg-gray-50 rounded-xl shadow p-8 flex flex-col items-center justify-center text-center group cursor-pointer"
-                      tabIndex={0}
-                    >
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-24 h-24 rounded-full object-cover mb-4"
-                      />
-                      <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
-                      <p className="text-xs text-gray-500 font-medium mb-2 uppercase tracking-wide">{member.role}</p>
-                      {/* Social icons always visible, including X (Twitter) */}
-                      {member.social && (
-                        <div className="flex space-x-3 justify-center mb-2 z-20 relative">
-                          {/* X (Twitter) icon */}
-                          {member.social.x && (
-                            <a
-                              href={member.social.x}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-gray-400 hover:text-black transition-colors"
-                              aria-label="X (Twitter)"
-                            >
-                              {/* Latest X (Twitter) SVG logo */}
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="20" height="20" fill="currentColor">
-                                <rect width="120" height="120" rx="24" fill="none"/>
-                                <path d="M87.5 32H104L72.5 68.5L109 112H83.5L61.5 85.5L36.5 112H20L54 73.5L19 32H45L65 56.5L87.5 32ZM82.5 104H90.5L44 40H36L82.5 104Z"/>
-                              </svg>
-                            </a>
-                          )}
-                          {/* Twitter icon (legacy, if present) */}
-                          {member.social.twitter && (
-                            <a
-                              href={member.social.twitter}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-gray-400 hover:text-blue-400 transition-colors"
-                            >
-                              <i className="fab fa-twitter text-lg"></i>
-                            </a>
-                          )}
-                          {member.social.linkedin && (
-                            <a
-                              href={member.social.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-gray-400 hover:text-blue-600 transition-colors"
-                            >
-                              <i className="fab fa-linkedin text-lg"></i>
-                            </a>
-                          )}
-                          {member.social.instagram && (
-                            <a
-                              href={member.social.instagram}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-gray-400 hover:text-pink-500 transition-colors"
-                            >
-                              <i className="fab fa-instagram text-lg"></i>
-                            </a>
-                          )}
-                        </div>
-                      )}
-                      {/* Bio overlay on hover/focus, but social icons remain visible */}
-                      <div className="absolute inset-0 bg-white bg-opacity-95 flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 rounded-xl z-10">
-                        <p className="text-gray-700 text-sm">{member.bio}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Meet Our Organizers</h2>
+      <p className="mt-4 text-xl text-gray-600">The passionate people behind our community</p>
+    </div>
+    
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {data.team.map((member, index) => (
+        <div
+          key={index}
+          className="relative bg-gray-50 rounded-xl shadow p-8 flex flex-col items-center justify-center text-center group cursor-pointer"
+          tabIndex={0}
+        >
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-24 h-24 rounded-full object-cover mb-4"
+          />
+          <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
+          <p className="text-xs text-gray-500 font-medium mb-2 uppercase tracking-wide">{member.role}</p>
+          {/* Social icons always visible, X (Twitter) always uses latest logo */}
+          {member.social && (
+            <div className="flex space-x-3 justify-center mb-2 z-20 relative">
+              {/* X (Twitter) icon for both .x and .twitter */}
+              {(member.social.x || member.social.twitter) && (
+                <a
+                  href={member.social.x || member.social.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-black transition-colors"
+                  aria-label="X (Twitter)"
+                >
+                  {/* Latest X (Twitter) SVG logo */}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="20" height="20" fill="currentColor">
+                    <rect width="120" height="120" rx="24" fill="none"/>
+                    <path d="M87.5 32H104L72.5 68.5L109 112H83.5L61.5 85.5L36.5 112H20L54 73.5L19 32H45L65 56.5L87.5 32ZM82.5 104H90.5L44 40H36L82.5 104Z"/>
+                  </svg>
+                </a>
+              )}
+              {member.social.linkedin && (
+                <a
+                  href={member.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-blue-600 transition-colors"
+                >
+                  <i className="fab fa-linkedin text-lg"></i>
+                </a>
+              )}
+              {member.social.instagram && (
+                <a
+                  href={member.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-pink-500 transition-colors"
+                >
+                  <i className="fab fa-instagram text-lg"></i>
+                </a>
+              )}
+            </div>
+          )}
+          {/* Bio overlay on hover/focus, but social icons remain visible */}
+          <div className="absolute inset-0 bg-white bg-opacity-95 flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 rounded-xl z-10">
+            <p className="text-gray-700 text-sm">{member.bio}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
             {/* Get Involved CTA */}
             <section className="py-16 bg-kenya-red">
@@ -240,26 +231,20 @@ export default function About() {
                   Join our growing community of documentation enthusiasts and help shape the future of technical writing in Kenya.
                 </p>
                 <div className="mt-8 space-x-4">
-                  <a
-                    href="https://linktr.ee/wtd_kenya" 
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button 
+                    className="bg-kenya-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-kenya-yellow hover:text-gray-900 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+                    onClick={() => setLocation('/join')}
                   >
-                    <button className="bg-white text-kenya-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                      <i className="fas fa-users mr-2"></i>
-                      Join the Community
-                    </button>
-                  </a>
-                  <a
-                    href="https://writedocskenya.org/speak" 
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    <i className="fas fa-users mr-2"></i>
+                    Join the Community
+                  </button>
+                  <button 
+                    className="bg-white text-kenya-red px-8 py-3 rounded-lg font-semibold hover:bg-kenya-yellow hover:text-gray-900 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+                    onClick={() => window.location.href = 'mailto:wtdkenya@gmail.com?subject=Request to Speak at WTDKenya Events'}
                   >
-                    <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-kenya-red transition-colors">
-                      <i className="fas fa-microphone mr-2"></i>
-                      Speak at an Event
-                    </button>
-                  </a>
+                    <i className="fas fa-microphone mr-2"></i>
+                    Speak at our Event
+                  </button>
                 </div>
                 {/* <div className="mt-8 space-x-4">
                   <button className="bg-white text-kenya-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">

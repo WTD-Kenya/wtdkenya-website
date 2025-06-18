@@ -49,13 +49,13 @@ export default function Join() {
   ];
 
   const communityChannels = [
-    {
-      name: "Slack Workspace",
-      description: "Daily discussions, Q&A, and networking",
-      url: "https://writethedocs.slack.com",
-      members: "1000+",
-      color: "bg-kenya-blue"
-    },
+    // {
+    //   name: "Slack Workspace",
+    //   description: "Daily discussions, Q&A, and networking",
+    //   url: "https://writethedocs.slack.com",
+    //   members: "1000+",
+    //   color: "bg-kenya-blue"
+    // },
     {
       name: "Meetup Group",
       description: "Event announcements and RSVPs",
