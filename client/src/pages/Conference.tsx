@@ -41,6 +41,7 @@ export default function Conference() {
                 <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
             </Helmet>
             <Navbar />
+
             <main className="scroll-smooth">
                 {/* Main content sections for the conference page */}
                 <HeroSection />
