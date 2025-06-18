@@ -108,10 +108,13 @@ export default function PartnersSection() {
 
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">Interested in partnering with us?</p>
-          <button className="bg-kenya-green text-white px-6 py-3 rounded-lg hover:bg-kenya-green/90 transition-colors">
+          <a
+            href="mailto:wtdkenya@gmail.com?subject=Partnership%20Inquiry"
+            className="inline-block bg-kenya-green text-white px-6 py-3 rounded-lg hover:bg-kenya-green/90 transition-colors"
+          >
             <i className="fas fa-handshake mr-2"></i>
             Become a Partner
-          </button>
+          </a>
         </div>
       </div>
     </section>
