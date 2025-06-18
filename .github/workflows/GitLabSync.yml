@@ -34,4 +34,4 @@ jobs:
 
       - name: Push to GitLab safely
         run: |
-          git push gitlab main
+          git push gitlab dev
