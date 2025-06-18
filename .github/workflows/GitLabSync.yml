@@ -12,7 +12,7 @@ jobs:
       - name: Checkout full history
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetches all history for all branches and tags
+          fetch-depth: 0
 
       - name: Set up Git identity
         run: |
@@ -23,9 +23,14 @@ jobs:
         run: |
           git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/jumalaw98/wtd-web.git
 
-      - name: Pull from GitLab
+      - name: Remove all files from main branch
         run: |
-          git pull --rebase gitlab main  # Rebase to avoid merge conflicts
+          git rm -r --ignore-unmatch *
+          git commit -am "Clean main branch before sync" || echo "Nothing to commit"
+
+      - name: Pull from GitLab (accept theirs)
+        run: |
+          git pull -s recursive -X theirs gitlab main
 
       - name: Push to GitLab safely
         run: |
