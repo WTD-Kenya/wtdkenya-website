@@ -10,6 +10,8 @@ import Blog from "@/pages/Blog";
 import NotFound from "@/pages/not-found";
 import PreviousConferences from "@/pages/PreviousConferences";
 import Conference from "@/pages/Conference";
+import Join from "@/pages/Join";
+
 
 function Router() {
   return (
@@ -20,6 +22,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/previous-conferences" component={PreviousConferences} />
       <Route path="/conference" component={Conference} />
+      <Route path="/join" component={Join} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -127,12 +127,49 @@ export default function Events() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Have an Event Idea?</h2>
             <p className="mt-4 text-xl text-green-100 max-w-3xl mx-auto">
-              We're always looking for fresh ideas and speakers. Share your event suggestion with us!
+            We're always on the lookout for fresh ideas, engaging speakers, and impactful workshop topics. Share your suggestions and help shape meaningful events that drive our community's learning journey!
             </p>
-            <Button className="mt-8 bg-white text-kenya-green hover:bg-gray-100">
-              <i className="fas fa-lightbulb mr-2"></i>
-              Suggest an Event
-            </Button>
+
+            {/* Responsive Contribution Section */}
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center py-8 rounded-xl">
+              {/* Speaking Opportunities */}
+              <div>
+                <div className="flex justify-center mb-4">
+                  <i className="fas fa-microphone text-3xl text-white"></i>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Speaking Opportunities</h3>
+                <p className="text-white text-base opacity-90">
+                  Share your expertise with the community
+                </p>
+              </div>
+              {/* Workshop Ideas */}
+              <div>
+                <div className="flex justify-center mb-4">
+                  <i className="fas fa-tools text-3xl text-white"></i>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Workshop Ideas</h3>
+                <p className="text-white text-base opacity-90">
+                  Suggest hands-on learning sessions
+                </p>
+              </div>
+              {/* Topic Suggestions */}
+              <div>
+                <div className="flex justify-center mb-4">
+                  <i className="fas fa-lightbulb text-3xl text-white"></i>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Topic Suggestions</h3>
+                <p className="text-white text-base opacity-90">
+                  Propose discussion topics
+                </p>
+              </div>
+            </div>
+
+            <a href="https://your-suggestion-link.com" target="_blank" rel="noopener noreferrer">
+              <Button className="mt-8 bg-white text-kenya-green hover:bg-gray-100">
+                <i className="fas fa-lightbulb mr-2"></i>
+                Suggest an Event
+              </Button>
+            </a>
           </div>
         </section>
       </main>

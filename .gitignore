@@ -76,3 +76,6 @@ coverage/
 *.swo
 *.orig
 *.rej
+
+# Ignore GitHub Actions workflows
+.github/workflows/

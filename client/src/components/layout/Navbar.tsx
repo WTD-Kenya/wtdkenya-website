@@ -13,6 +13,7 @@ export default function Navbar() {
     { name: "About", href: "/about" },
     { name: "Events", href: "/events" },
     { name: "Blog", href: "/blog" },
+    { name: "Join", href: "/join"},
     // { name: "conference", href: "conference"},
     { name: "Previous Conferences", href: "/previous-conferences" },
   ];
