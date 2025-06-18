@@ -28,10 +28,10 @@ jobs:
           git rm -r --ignore-unmatch *
           git commit -am "Clean main branch before sync" || echo "Nothing to commit"
 
-      - name: Pull from GitLab (accept theirs)
+      - name: Pull from GitLab (accept theirs, use rebase)
         run: |
-          git pull -s recursive -X theirs gitlab main
+          git pull --rebase -s recursive -X theirs gitlab main
 
       - name: Push to GitLab safely
         run: |
-          git push gitlab dev
+          git push gitlab main
