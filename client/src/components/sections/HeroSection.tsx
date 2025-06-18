@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+// import { Link } from "wouter";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const navigate = useNavigate();
   
   const backgroundImages = [
     "https://cdn.hashnode.com/res/hashnode/image/upload/v1716840279427/3d59fb38-22e4-492c-8959-c468e9dcf6aa.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
@@ -22,6 +24,17 @@ export default function HeroSection() {
 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
+
+  const scrollToEvents = () => {
+    navigate('/');
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const eventsSection = document.getElementById('upcomingevents');
+      if (eventsSection) {
+        eventsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   return (
     <section className="relative overflow-hidden py-20 lg:py-32">
@@ -53,8 +66,8 @@ export default function HeroSection() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              className="bg-accent-orange text-white hover:bg-accent-orange/90 hover:scale-105 transition-transform duration-200"
-              onClick={() => window.open('https://your-link-here.com', '_blank')}
+              className="bg-kenya-red text-white hover:bg-kenya-yellow hover:text-gray-900 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+              onClick={() => navigate('/join')}
             >
               Join the Community
             </Button>
@@ -63,12 +76,12 @@ export default function HeroSection() {
               <i className="fas fa-users mr-2"></i>
               Join the Community
             </Button> */}
-            <Link href="/events">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
-                <i className="fas fa-calendar mr-2"></i>
-                View Upcoming Events
-              </Button>
-            </Link>
+            <Button
+              className="bg-kenya-green text-white hover:bg-kenya-red hover:text-white transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+              onClick={scrollToEvents}
+            >
+              View Upcoming Events
+            </Button>
           </div>
         </div>
         

@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+// import { Menu } from "lucide-react";
 // import logoImage from "@assets/logo_1749796439184.jpg";
 
 export default function Navbar() {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
@@ -13,7 +14,7 @@ export default function Navbar() {
     { name: "About", href: "/about" },
     { name: "Events", href: "/events" },
     { name: "Blog", href: "/blog" },
-    { name: "Join", href: "/join"},
+    // { name: "Join", href: "/join"},
     // { name: "conference", href: "conference"},
     { name: "Previous Conferences", href: "/previous-conferences" },
   ];
@@ -22,6 +23,11 @@ export default function Navbar() {
     if (href === "/" && location === "/") return true;
     if (href !== "/" && location.startsWith(href)) return true;
     return false;
+  };
+
+  const handleJoinClick = () => {
+    setLocation('/join');
+    setIsOpen(false);
   };
 
   return (
@@ -53,7 +59,10 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <Button className="bg-accent-orange text-white hover:bg-accent-orange/90">
+              <Button 
+                className="bg-kenya-red text-white hover:bg-kenya-yellow hover:text-gray-900 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+                onClick={handleJoinClick}
+              >
                 <i className="fas fa-users mr-2"></i>
                 Join Us
               </Button>
@@ -83,7 +92,10 @@ export default function Navbar() {
                       {item.name}
                     </Link>
                   ))}
-                  <Button className="bg-accent-orange text-white hover:bg-accent-orange/90 w-full">
+                  <Button 
+                    className="w-full bg-kenya-red text-white hover:bg-kenya-yellow hover:text-gray-900 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+                    onClick={handleJoinClick}
+                  >
                     <i className="fas fa-users mr-2"></i>
                     Join Us
                   </Button>
