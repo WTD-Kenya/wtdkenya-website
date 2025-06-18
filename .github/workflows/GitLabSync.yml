@@ -23,6 +23,10 @@ jobs:
         run: |
           git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/jumalaw98/wtd-web.git
 
+      - name: Pull from GitLab
+        run: |
+          git pull --rebase gitlab main  # Rebase to avoid merge conflicts
+
       - name: Push to GitLab safely
         run: |
           git push gitlab main
