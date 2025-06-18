@@ -40,6 +40,7 @@ export interface TeamMember {
     twitter?: string;
     linkedin?: string;
     instagram?: string;
+    x?: string;
   };
 }
 
