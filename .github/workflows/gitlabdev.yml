@@ -21,6 +21,11 @@ jobs:
         run: |
           git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/jumalaw98/wtdkenya-website.git
 
+      - name: Pull latest changes from GitLab main
+        run: |
+          git fetch gitlab main
+          git merge gitlab/main || true
+
       - name: Push dev to GitLab main
         run: |
           git push gitlab HEAD:main
