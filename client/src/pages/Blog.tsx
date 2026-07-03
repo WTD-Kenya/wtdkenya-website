@@ -4,15 +4,11 @@ import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/BlogCard";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { AlertCircle } from "lucide-react";
 import type { HashnodePost } from "@/lib/types";
 import { useHashnodePosts } from "@/hooks/useHashnodePosts";
 
-
-
 export default function Blog() {
-  const { data: posts, isLoading, error } = useHashnodePosts();
+  const { data: posts, isLoading } = useHashnodePosts();
   const [samplePosts, setSamplePosts] = useState<HashnodePost[]>([]);
 
   useEffect(() => {
@@ -84,15 +80,6 @@ export default function Blog() {
               </div>
             )}
             
-            {error && (!posts || posts.length === 0) && (
-              <Alert className="max-w-md mx-auto">
-                <AlertCircle className="h-4 w-4" />
-                <AlertDescription>
-                  Unable to load live blog posts. To see our latest content, visit our external blog.
-                </AlertDescription>
-              </Alert>
-            )}
-            
             {displayPosts && displayPosts.length === 0 && !isLoading && (
               <div className="text-center py-12">
                 <i className="fas fa-pen-alt text-gray-400 text-6xl mb-4"></i>
@@ -128,7 +115,7 @@ export default function Blog() {
                 <i className="fas fa-pen mr-2"></i>
                 Submit a Post
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-accent-orange">
+              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-accent-orange">
                 <i className="fas fa-info-circle mr-2"></i>
                 Writing Guidelines
               </Button>

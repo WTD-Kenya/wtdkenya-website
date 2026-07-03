@@ -40,7 +40,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       // Fetch from Meetup API
-      const response = await fetch(`https://api.meetup.com/write-the-docs-kenya/events?status=upcoming&page=20`, {
+      const status = req.query.status === "past" ? "past" : "upcoming";
+      const order = status === "past" ? "&desc=true" : "";
+      const response = await fetch(`https://api.meetup.com/write-the-docs-kenya/events?status=${status}&page=20${order}`, {
         headers: {
           'Authorization': `Bearer ${meetupApiKey}`,
         },

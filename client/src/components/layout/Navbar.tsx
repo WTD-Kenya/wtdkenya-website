@@ -52,7 +52,10 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <Button className="bg-accent-orange text-white hover:bg-accent-orange/90">
+              <Button
+                className="bg-kenya-red text-white hover:bg-kenya-red"
+                onClick={() => window.open('https://www.meetup.com/wtd-kenya/', '_blank')}
+              >
                 <i className="fas fa-users mr-2"></i>
                 Join Us
               </Button>
@@ -82,7 +85,13 @@ export default function Navbar() {
                       {item.name}
                     </Link>
                   ))}
-                  <Button className="bg-accent-orange text-white hover:bg-accent-orange/90 w-full">
+                  <Button
+                    className="bg-kenya-red text-white hover:bg-kenya-red w-full"
+                    onClick={() => {
+                      setIsOpen(false);
+                      window.open('https://www.meetup.com/wtd-kenya/', '_blank');
+                    }}
+                  >
                     <i className="fas fa-users mr-2"></i>
                     Join Us
                   </Button>

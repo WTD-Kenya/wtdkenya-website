@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { AlertCircle } from "lucide-react";
 import BlogCard from "@/components/BlogCard";
 import { Link } from "wouter";
 import type { HashnodePost } from "@/lib/types";
 import { useHashnodePosts } from "@/hooks/useHashnodePosts";
 
 export default function BlogHighlights() {
-  const { data: posts, isLoading, error } = useHashnodePosts();
+  const { data: posts, isLoading } = useHashnodePosts();
   const [samplePosts, setSamplePosts] = useState<HashnodePost[]>([]);
   
   useEffect(() => {
@@ -25,7 +23,7 @@ export default function BlogHighlights() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Latest from Our Blog</h2>
+          <h2 className="text-3xl font-bold text-kenya-black sm:text-4xl">Latest from Our Blog</h2>
           <p className="mt-4 text-xl text-gray-600">Stories, insights, and ideas from the docs community</p>
         </div>
         
@@ -53,15 +51,6 @@ export default function BlogHighlights() {
             </div>
           )}
           
-          {error && (!posts || posts.length === 0) && (
-            <Alert className="max-w-md mx-auto">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription>
-                Unable to load live blog posts. To see our latest content, visit our external blog.
-              </AlertDescription>
-            </Alert>
-          )}
-          
           {displayPosts && displayPosts.length === 0 && !isLoading && (
             <div className="text-center py-12">
               <p className="text-gray-600 text-lg">No blog posts available.</p>
@@ -85,10 +74,6 @@ export default function BlogHighlights() {
               <i className="fas fa-arrow-right ml-2"></i>
             </Button>
           </Link>
-          {/* <Button className="bg-accent-orange text-white hover:bg-accent-orange/90">
-            <i className="fas fa-pen mr-2"></i>
-            Contribute a Blog Post
-          </Button> */}
         </div>
       </div>
     </section>

@@ -2,14 +2,14 @@ import React from "react";
 
 export default function VenueSection() {
   return (
-    <section id="venue" className="py-20 bg-yellow-50">
+    <section id="venue" className="py-20 bg-red-50">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-kenya-red mb-12">Venue & Location</h2>
         <p className="text-lg text-gray-700 mb-6">Join us at our state-of-the-art venue designed for optimal learning and networking.</p>
         
         <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">[Venue Name]</h3>
-          <p className="text-gray-700">[Full Venue Address, City, Country, Postal Code]</p>
+          <h3 className="text-xl font-semibold text-kenya-black mb-2">KCA University</h3>
+          <p className="text-gray-700">Nairobi, Kenya</p>
           <div className="mt-6 w-full h-80 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
             {/* Placeholder for embedded map */}
             Embedded Map Here (e.g., Google Maps iframe)
@@ -26,7 +26,7 @@ export default function VenueSection() {
 
         {/* Optional: Local Accommodation */}
         {/* <div className="mt-12">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Local Accommodation</h3>
+          <h3 className="text-2xl font-bold text-kenya-black mb-4">Local Accommodation</h3>
           <p className="text-gray-700 mb-4">Here are some recommended hotels near the venue:</p>
           <ul className="list-disc ml-6 text-gray-700">
             <li>[Hotel Name 1]</li>

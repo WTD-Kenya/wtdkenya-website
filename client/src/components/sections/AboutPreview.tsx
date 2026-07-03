@@ -7,7 +7,7 @@ export default function AboutPreview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-base text-kenya-green font-semibold tracking-wide uppercase">About Us</h2>
-          <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-kenya-black sm:text-4xl">
             Building a Stronger Documentation Community
           </p>
           <p className="mt-4 max-w-3xl text-xl text-gray-600 lg:mx-auto">
@@ -19,9 +19,9 @@ export default function AboutPreview() {
             {/* Community */}
             <div>
               <div className="flex justify-center mb-4">
-                <i className="fas fa-users text-3xl text-red-600"></i>
+                <i className="fas fa-users text-3xl text-kenya-red"></i>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Community</h3>
+              <h3 className="text-lg font-bold text-kenya-black mb-2">Community</h3>
               <p className="text-gray-600 text-base">
                 Connect with fellow documentation enthusiasts<br className="hidden md:block" />
                 and technical writers.
@@ -30,9 +30,9 @@ export default function AboutPreview() {
             {/* Learning */}
             <div>
               <div className="flex justify-center mb-4">
-                <i className="fas fa-graduation-cap text-3xl text-green-700"></i>
+                <i className="fas fa-graduation-cap text-3xl text-kenya-green"></i>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Learning</h3>
+              <h3 className="text-lg font-bold text-kenya-black mb-2">Learning</h3>
               <p className="text-gray-600 text-base">
                 Enhance your skills through workshops, talks, and<br className="hidden md:block" />
                 collaborative learning.
@@ -41,11 +41,11 @@ export default function AboutPreview() {
             {/* Growth */}
             <div>
               <div className="flex justify-center mb-4">
-                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100">
-                  <i className="fas fa-rocket text-xl text-blue-600"></i>
+                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100">
+                  <i className="fas fa-rocket text-xl text-kenya-black"></i>
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Growth</h3>
+              <h3 className="text-lg font-bold text-kenya-black mb-2">Growth</h3>
               <p className="text-gray-600 text-base">
                 Advance your career and contribute to Kenya's<br className="hidden md:block" />
                 growing tech documentation culture.

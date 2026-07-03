@@ -72,11 +72,9 @@ export default function TestimonialSection() {
 
   return (
     <section className="w-full bg-gradient-to-br from-gray-50 to-white py-20">
-      {/* bg-gradient-to-br from-gray-50 to-white py-20 /// bg-[#e4e9ee] py-16 */}
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between mb-10">
-          <h2 className="text-4xl font-extrabold text-left text-gray-900" >
-          {/* text-3xl font-bold text-gray-900 sm:text-4xl mb-12 //// style={{color:'#d6f5d6'}} // text-4xl font-extrabold text-left text-[#d6f5d6]*/}
+          <h2 className="text-4xl font-extrabold text-left text-kenya-black">
             Why they love Write the Docs Kenya
           </h2>
           <div className="flex items-center gap-2">
@@ -107,7 +105,7 @@ export default function TestimonialSection() {
               className="bg-white rounded-lg shadow p-6 flex-1 min-w-0"
             >
               <p className="text-gray-800 text-lg mb-6">{testimonial.quote}</p>
-              <div className="font-semibold text-gray-900">{testimonial.author}</div>
+              <div className="font-semibold text-kenya-black">{testimonial.author}</div>
               <div className="text-gray-500 italic">{testimonial.company}</div>
             </div>
           ))}

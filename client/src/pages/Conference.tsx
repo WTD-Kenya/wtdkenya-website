@@ -6,39 +6,37 @@ import HeroSection from "@/components/consection/HeroSec";
 import AboutSection from "@/components/consection/AboutSec";
 import ScheduleSection from "@/components/consection/ScheduleSection";
 import SpeakersSection from "@/components/consection/SpeakersSection";
-import RegistrationSection from "@/components/consection/RegistrationSection";
 import VenueSection from "@/components/consection/VenueSection";
 import SponsorsSection from "@/components/consection/SponsorsSection";
 import FAQSection from "@/components/consection/FAQSection";
-import ContactSection from "@/components/consection/ContactSection";
 
 export default function Conference() {
     return (
         <div className="min-h-screen bg-white">
             {/* SEO meta tags for better search engine ranking and sharing */}
             <Helmet>
-                <title>Conference 2024 | Your Event Name</title>
+                <title>Write The Docs Kenya Conference 2026</title>
                 <meta
                     name="description"
-                    content="Join us at Conference 2025 for insightful talks, networking, and more. Register now!"
+                    content="Join us at Write The Docs Kenya Conference 2026 on August 8, 2026 at KCA University for insightful talks, networking, and more. Register now!"
                 />
                 {/* Open Graph tags for social media sharing */}
-                <meta property="og:title" content="Conference 2024 | Your Event Name" />
+                <meta property="og:title" content="Write The Docs Kenya Conference 2026" />
                 <meta
                     property="og:description"
-                    content="Join us at Conference 2024 for insightful talks, networking, and more. Register now!"
+                    content="Join us at Write The Docs Kenya Conference 2026 on August 8, 2026 at KCA University for insightful talks, networking, and more. Register now!"
                 />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://yourdomain.com/conference" />
-                <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+                <meta property="og:url" content="https://wtdke.netlify.app/conference" />
+                <meta property="og:image" content="https://wtdke.netlify.app/og-image.jpg" />
                 {/* Twitter Card tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Conference 2024 | Your Event Name" />
+                <meta name="twitter:title" content="Write The Docs Kenya Conference 2026" />
                 <meta
                     name="twitter:description"
-                    content="Join us at Conference 2024 for insightful talks, networking, and more. Register now!"
+                    content="Join us at Write The Docs Kenya Conference 2026 on August 8, 2026 at KCA University for insightful talks, networking, and more. Register now!"
                 />
-                <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
+                <meta name="twitter:image" content="https://wtdke.netlify.app/og-image.jpg" />
             </Helmet>
             <Navbar />
 
@@ -48,11 +46,9 @@ export default function Conference() {
                 <AboutSection />
                 <ScheduleSection />
                 <SpeakersSection />
-                <RegistrationSection />
                 <VenueSection />
                 <SponsorsSection />
                 <FAQSection />
-                <ContactSection />
             </main>
             <Footer />
         </div>
