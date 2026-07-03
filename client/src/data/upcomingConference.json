@@ -1,0 +1,532 @@
+{
+  "event": {
+    "name": "Write The Docs Kenya Conference 2026",
+    "theme": "",
+    "date": "2026-08-08",
+    "displayDate": "August 8, 2026",
+    "venue": "KCA University",
+    "registrationLink": "https://www.meetup.com/wtd-kenya/events/314376384/"
+  },
+  "speakers": [
+    {
+      "id": "d314b11b-48c3-4cad-85eb-e7b22371d201",
+      "name": "Alias Nutcase",
+      "tagline": "Wooh,I just tinker",
+      "bio": "I just build stuffs and enjoy my life",
+      "image": "https://cdn.sessionize.com/image/595d-400o400o1-H8jo9KN6mXygRTfZ2nrF1f.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Code is Cheap, Context is Expensive: Docs that Survive the FinTech Fire"
+      ]
+    },
+    {
+      "id": "0106731d-4abb-49bf-9f00-028a2119a54b",
+      "name": "Bethwel Kiplagat",
+      "tagline": "Software Engineer, Technical Co-founder at Crezine Cashdoor, and documentation believer",
+      "bio": "Bethwel Kiplagat is a Software Engineer and Technical Co-founder at Crezine Cashdoor, where he builds user-friendly applications and manages the technical side of a growing startup. With a background in Computer Science, he discovered early that great code alone isn't enough — users need clear, kind, and useful documentation to truly benefit from any product.\r\n\r\nThis belief in clarity and empowerment drives everything he does: as a universal mentor at the GeeKulcha Student Society (GKSS), he helps new developers navigate technical documentation without getting lost. He also contributes to open-source projects, often focusing on improving READMEs and contributor guides.\r\n\r\nBethwel is applying to speak at Write The Docs Kenya because he wants to share what he's learned about documentation best practices — from his own early confusion to the small, repeatable habits that now make his docs more useful. This will be his first conference talk, and he's excited to learn from and contribute to the WTD community.",
+      "image": "https://cdn.sessionize.com/image/311d-400o400o1-4HP8JuBwFvsmKfbmacWNV.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "The 5-Minute README Fix: Small Changes, Big Impact"
+      ]
+    },
+    {
+      "id": "c101ebc8-a504-489e-8114-0ad7f6536315",
+      "name": "Bret Oreta",
+      "tagline": "Lead Developer, Fairdeal Furniture. ",
+      "bio": "I’m a software developer and systems builder focused on creating scalable web applications, automation workflows, and developer-focused tools. My work spans full-sack web development, AI-assisted workflows, API integrations, and knowledge systems designed to improve developer experience and operational efficiency. I’ve worked on projects involving automation platforms, vector databases, internal support systems, payment integrations, and AI-powered retrieval workflows that help teams turn scattered documentation into accessible, searchable knowledge. I’m particularly interested in the intersection of developer experience, documentation, and practical AI applications for modern engineering teams.",
+      "image": "https://cdn.sessionize.com/image/23e9-400o400o1-3fJKuaFQshC9yeKvsH72oi.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "From Dead Docs to Searchable Knowledge"
+      ]
+    },
+    {
+      "id": "a82f851c-a73a-45ca-a393-5e142ba633d4",
+      "name": "Caleb Jephuneh",
+      "tagline": "Founder BricklabsAI ",
+      "bio": "I am a tech entrepreneur with two successful exits, driven by a relentless passion for building impactful technology. With over seven years of hands-on experience in software engineering, I have worked across innovative startups, large enterprises, and award-winning agencies, building a strong foundation in both software and AI.\r\n\r\nAs a global AI speaker, I focus on inspiring the next generation of innovators to think beyond limitations and challenge conventional approaches to technology. I am passionate about empowering young innovators to think out of the box, build boldly, and create solutions that drive real-world impact.\r\n\r\nIn 2025, I was honored with the Young Africa CEO of the Year award by the CIO 100 Awards, and my company was recognized as one of the fastest-growing companies in Africa—milestones that reflect both my entrepreneurial journey and commitment to innovation.\r\n\r\nI am dedicated to shaping the future of technology in Africa and beyond by fostering creativity, pushing boundaries, and turning ideas into scalable impact.",
+      "image": "https://cdn.sessionize.com/image/1108-400o400o1-HcdSVFHo81jzktFyoA5w1p.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Multilingual docs without losing your mind (or your meaning)"
+      ]
+    },
+    {
+      "id": "7d8612d1-2b5c-4415-997a-df8e63e27196",
+      "name": "Daisy Auma",
+      "tagline": "Developer Relations Engineer, Co - founder Lux Academy,WTM Ambassador",
+      "bio": "Daisy Auma is a Developer Relations Engineer and technical writer who most recently led documentation for Archetype AI's Newton physical AI platform. She co-founded LuxDevHQ, an AI and data science bootcamp now training 2,400+ students across 16 African countries, and is pursuing an MSc in Data Science at the University of East London. Her background spans developer advocacy and API documentation at Cloudflare, Kudan, and Safaricom (M-PESA Daraja). She is a Women Techmakers Ambassador and Google Community Builder, and creates educational tech content as @daisy_codes.",
+      "image": "https://cdn.sessionize.com/image/0925-400o400o1-YfENcReHXE2atiDcDmkxZ2.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Documenting an AI That Sees the Physical World: Building a CI/CD Pipeline for Foundation Model Docs"
+      ]
+    },
+    {
+      "id": "666d5905-bf3f-4756-92b2-e18125bacf89",
+      "name": "Derdus Kenga",
+      "tagline": "Knowledge Engineer at Microsoft",
+      "bio": "6 years of technical writing experience, 8 years of university teaching Experience, 2 years of software engineering experience, 1 year vibe coding.",
+      "image": null,
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Understand LLMs and RAG basics to write better product content"
+      ]
+    },
+    {
+      "id": "e78e43ee-72dc-421e-b12f-ab75e2942c79",
+      "name": "Ephraim Mwereza",
+      "tagline": "Founder, Utter",
+      "bio": "Ephraim Mwereza is a technology leader and innovator harnessing the power of software and AI to drive transformative change across Africa. \r\n\r\nHe builds localized, sustainable digital solutions that address critical challenges in health, education, and inclusivity, ensuring even the most vulnerable communities benefit from the tech revolution. \r\n\r\nCombining deep technical expertise with a human-centered, ethical approach, Ephraim seeks collaborations with leading experts to maximize impact and build a brighter, more inclusive future.",
+      "image": "https://cdn.sessionize.com/image/116f-400o400o1-E771PXWb9S5S4KuNN9ARub.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "From App Engine to Cloud Run: A Docker Migration Story"
+      ]
+    },
+    {
+      "id": "abe915e2-8ecf-4afa-8d01-94da2c24be1a",
+      "name": "Felix Jumason",
+      "tagline": "Software Developer",
+      "bio": "Building cool software in Telco industry",
+      "image": "https://cdn.sessionize.com/image/40fc-400o400o1-4AhNaMA4pyUuj43vQM9hLW.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "How Cursor Uses Documentation to Build Better AI Coding Workflows"
+      ]
+    },
+    {
+      "id": "2b108a95-fb94-4661-8c6a-dfbfae545fbf",
+      "name": "Hidaya Vanessa",
+      "tagline": "Software Developer",
+      "bio": "Software developer and techie passionate about simplifying APIs and developer tools for beginners",
+      "image": "https://cdn.sessionize.com/image/172f-400o400o1-wdemgGFvULxbnMi15Q5JFo.png",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "The Docs We Don't Call Documentation"
+      ]
+    },
+    {
+      "id": "a79717a2-9fb0-4806-b418-6f979b1e6963",
+      "name": "Himesh Siriwardana",
+      "tagline": "Senior Technical Writer",
+      "bio": "Himesh Siriwardana is a technical writer specializing in Identity and Access Management documentation. He works on documentation strategy, content architecture, developer-focused content, and documentation workflows for complex security products.\r\n\r\nAs the content owner for IAM documentation, Himesh collaborates with engineering, product, developer relations, customer success, and support teams to create user-focused documentation experiences. His work focuses on turning complex identity and security concepts into practical content that helps developers, administrators, and enterprise customers adopt products with confidence.\r\n\r\nHe is especially interested in documentation systems and the evolving role of technical writers as content strategists and documentation architects.",
+      "image": "https://cdn.sessionize.com/image/8ba0-400o400o1-QNM7c8zctDSaNxmAr2GDNK.png",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "My Engineering Team Is My Documentation Team"
+      ]
+    },
+    {
+      "id": "99cace2f-560e-4691-8b45-8a5b85a81aaf",
+      "name": "Jimmy Tron",
+      "tagline": "SpaceYaTech, Community Lead",
+      "bio": "I am a community manager at SpaceYaTech and also work in tech. \r\nI specialize in backend web development using Django. With extensive experience in Linux systems, administrative tools on both Windows and Linux, web hosting and services, robotics, IoT, and Git/GitHub, I have worked on various projects.",
+      "image": "https://cdn.sessionize.com/image/e572-400o400o1-BtMdCcrz5VD5YWv5ACbVCM.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Tailoring Open source contribution for career transitions"
+      ]
+    },
+    {
+      "id": "603d8c17-9de8-4ff3-a9c6-b530e9e2c8d3",
+      "name": "Job Alex Muturi",
+      "tagline": "DevRel / DevEx / Software Engineer / Mentor",
+      "bio": "Software engineer, DevRel & DevEx Engineer, and builder focused on developer tooling, executable documentation, and technical storytelling workflows. Creator of slides-tape, a Markdown-first orchestration engine for automated demos, re-playable tutorials, and executable developer experiences and DatabridgeCLI, a database compiler that turns databases + intent into deterministic, production-ready APIs, SDKs, and contracts — with no runtime lock-in.",
+      "image": "https://cdn.sessionize.com/image/ce9e-400o400o1-D3bCf1BfLZPFHCxidisQrq.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "From Static Docs to Executables: Building Replayable and Verifiable Documentation Workflows"
+      ]
+    },
+    {
+      "id": "b6065e89-3d9f-44cc-9dcb-1c02aae1c0ee",
+      "name": "Leen Kirau Noted",
+      "tagline": "Community Development Advocate & Digital Literacy Strategist",
+      "bio": "Leen Kirau is a community development practitioner and student leader at Alupe University, deeply committed to bridging the digital divide through grassroots education and peer advocacy. With strong experience in youth mobilization, digital literacy initiatives, and strategic AI frameworks, she focuses on making emerging technologies accessible, inclusive, and actionable for local communities.",
+      "image": "https://cdn.sessionize.com/image/5db2-400o400o1-G2jvmKjb9DeasFs1EJeAYn.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Cultivating AI Literacy: Making Tech Documentation Inclusive for All Communities"
+      ]
+    },
+    {
+      "id": "d14837b7-81ac-4746-8a4c-54d8bee6fad1",
+      "name": "Mosongo Danfold",
+      "tagline": "TECH POLICY ADVOCATE|CYBER SECURITY & FORENSICS .ENG| TECH WRITER ",
+      "bio": "Mosongo Danfold is a Tech Policy Advocate , Cybersecurity and Forensics Engineer. He is the founder of TECH.PATHS, an initiative that equips African youth with digital literacy and mentorship on Tech sovereignty. Recognised as a tech diplomat and statesman, he works at the intersection of cybersecurity, policy, and youth empowerment, contributing to national digital governance processes and speaking on digital sovereignty and ethical technology.",
+      "image": "https://cdn.sessionize.com/image/2e33-400o400o1-WqU8rTHpSLLQfVXhxPgRkC.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "The APT Approach to Documentation: Consistency Over CV Padding"
+      ]
+    },
+    {
+      "id": "4a7c0268-82a2-404c-81f0-7751b455ee0a",
+      "name": "Prince Onyeanuna",
+      "tagline": "Technical Writer @Pi-Squared Inc.",
+      "bio": "Prince Onyeanuna is a dedicated technical writer at Pi Squared, with a strong foundation in cloud-native technologies and DevOps engineering.\r\n\r\nHe has contributed extensively to open-source projects, notably with OpenMRS, where he honed his skills in crafting comprehensive technical documentation.\r\n\r\nPrince's passion for technology and education is evident in his mentorship roles within the Technical Writers Mentorship Program open-source community, where he has guided numerous aspiring writers.",
+      "image": "https://cdn.sessionize.com/image/253c-400o400o1-W4vHpv22qgYDJefzW5rMqH.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Navigating Documentation Challenges: Success Stories from the OpenMRS Wiki Revamp Project"
+      ]
+    },
+    {
+      "id": "3684c5c7-7192-4bf9-bd3b-bf65fe00f638",
+      "name": "Samuel Macharia",
+      "tagline": "Google Developer Expert for Google Cloud | Cloud DevOps Engineer",
+      "bio": "Samuel Macharia is a skilled Cloud DevOps Engineer with a passion for leveraging cloud technologies i.e. AWS, Azure & Google Cloud to drive innovation. He holds certifications as a Google Cloud Certified Professional Cloud Architect and Microsoft Certified DevOps Engineer Expert, equipping him to design and manage secure, scalable, and high-performing infrastructure across multi-cloud environments.\r\n\r\nSamuel is dedicated to empowering the next generation of tech talent and has served as a mentor in the Grow Your Skills for Sub-Saharan Africa Google Cloud Program 2024. With a focus on practical solutions and a commitment to communities including AWS User Group Kenya, CloudForce Sky, GDG Eldoret & Write the Docs Kenya where he volunteers, Samuel is excited to share his knowledge and inspire others to embrace the power of the cloud.\r\n\r\nComing from a community best known for resilience and entrepreneurial spirit, he opted to code his own path forward. When he's not building in tech, he's exploring new creative endeavors, mastering chess strategies, or immersed in an intense crime drama.",
+      "image": "https://cdn.sessionize.com/image/29ce-400o400o1-KbjQdkMKw8icpGd4136SzK.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "From App Engine to Cloud Run: A Docker Migration Story"
+      ]
+    },
+    {
+      "id": "976eed09-53cc-49f2-ac85-dc24a0dc81ad",
+      "name": "Sandra Kimiring",
+      "tagline": "AI / ML engineer",
+      "bio": "I build AI and machine learning systems end-to-end - from raw data and modeling to deployment and backend infrastructure.\r\n\r\nCurrently, I’m a Co-Founder at Inua360, where we’re building AI-powered business intelligence tools for SMEs, and I also contribute to AI system design and implementation work at Uamuzi Foundation.",
+      "image": "https://cdn.sessionize.com/image/4dca-400o400o1-BQbt8qZWvLZDH9C9L7MgWJ.png",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Beyond the Notebook: Architecting Organizational Memory for ML Teams"
+      ]
+    },
+    {
+      "id": "43707598-8e31-463f-8e5d-07f7e4d137e0",
+      "name": "Stanley Ndagi",
+      "tagline": "Digital Products professional",
+      "bio": "Stanley brings expertise in leadership, technical product and program management, full-stack cross-platform software engineering, AI adoption and tooling, and comprehensive technical communication. He empowers teams, steers technical products and programs, engineers versatile software solutions, and effectively bridges the gap between technical complexities and clear understanding for various stakeholders.\r\n\r\nHe is experienced in working remotely in distributed, multidisciplinary, cross-cultural, and multinational teams. His work cuts across fintech, agriculture, government, fashion, not-for-profit, and education sectors.\r\n\r\nHe delivers value, builds team capacity, generates revenue, optimizes processes, and reduces costs. Technical writing is another forte, covering content strategy and design, and information architecture, while also enhancing developer education, experience, and productivity. A champion of free and open-source code, Stanley is well versed in Agile-Scrum methodology.\r\n\r\nStanley leads TechKln, a community championing digital literacy, and mentors professionals globally through ADPList, where he has been recognized as a Top Achiever. He has also been recognized as a GitHub Star and CircleCI Champion.\r\n\r\nAfter hours and off work, Stanley enjoys quality time with his family, engages with individuals and organizational teams from early-stage startups to 60+ year-old institutions across SDLC stages, and tinkers with hardware and software projects spanning IoT, carpentry, and mechanics.",
+      "image": "https://cdn.sessionize.com/image/84fc-400o400o1-ET38WoGb8pakRVTVEgFDzQ.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Docs in the Real World: Platforms, AI, and the Cost of Getting It Right"
+      ]
+    },
+    {
+      "id": "04f5dbaa-1623-43ff-b186-0d1e936acce5",
+      "name": "Tonny Gidraph",
+      "tagline": "Netmatta | Technical Writer & Software Developer | Turning complexity into clarity",
+      "bio": "Tonny Gidraph is a technical writer and software developer with experience creating technical content across software development, Raspberry Pi projects, Linux systems, cybersecurity, web development, and emerging technologies. He focuses on translating complex technical concepts into practical, easy-to-follow content for diverse audiences.\r\n\r\nWith a hands-on background in building and experimenting with technology, Tonny combines technical knowledge with clear communication to create documentation that is accessible to different audiences.\r\n\r\nHe is particularly interested in how AI is transforming the documentation process and how technical writers can adapt to new tools while maintaining accuracy, usability, and trust.\r\n\r\nPortfolio: https://tonnygidraph.vercel.app",
+      "image": "https://cdn.sessionize.com/image/27cf-400o400o1-LdbEBuh46eF3t8tCzy8hBG.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "AI Won’t Replace Technical Writers - It’s Changing How We Work"
+      ]
+    },
+    {
+      "id": "55bee586-1357-4391-8cff-b9255389ef44",
+      "name": "Zawadi Mukuru",
+      "tagline": "Full stack Data Scientist,Machine Learning Engineer",
+      "bio": "I am a data scientist and machine learning engineer currently pursuing Data Science and Analytics at JKUAT. I specialize in building and deploying end-to-end machine learning systems, with a focus on applied AI, data engineering, and production-grade model development.\r\n\r\nMy work spans the full machine learning lifecycle—from data pipelines and feature engineering to model training, evaluation, and deployment in real-world environments. I have experience designing scalable systems such as recommendation engines, predictive models, and intelligent data-driven platforms that operate under practical constraints.\r\n\r\nI am particularly interested in how machine learning systems are built to function reliably in production, especially in environments where data is noisy, requirements evolve quickly, and systems must remain maintainable over time. I work primarily with Python, SQL, and modern ML frameworks to turn complex data into robust, deployable intelligence.",
+      "image": "https://cdn.sessionize.com/image/d0bc-400o400o1-Qd7NXJi1SPhLWgPwSLDujN.jpg",
+      "social": {
+        "linkedin": "",
+        "x": ""
+      },
+      "topics": [
+        "Beyond the Notebook: Architecting Organizational Memory for ML Teams"
+      ]
+    }
+  ],
+  "schedule": {
+    "date": "2026-08-08",
+    "rooms": [
+      "Main Stage",
+      "Breakout Room 1"
+    ],
+    "sessions": [
+      {
+        "id": "1238853",
+        "title": "AI Won’t Replace Technical Writers - It’s Changing How We Work",
+        "description": "Artificial Intelligence has rapidly become part of the technical writing workflow. From generating outlines and improving grammar to creating drafts and summarizing complex information, AI tools are changing how documentation is created.\r\n\r\nBut while these tools can increase speed and productivity, they also introduce new challenges such as inaccuracies, missing context, and content that appears correct but fails in real-world use.\r\n\r\nThis talk explores the evolving relationship between AI and technical writing through practical examples and real-world experiences.\r\n\r\nAttendees will learn where AI can effectively support technical writers, where human expertise remains essential, and how writers can use AI as a collaborative tool rather than viewing it as a replacement.\r\n\r\nThe session will cover:\r\n\r\n- Practical ways AI can assist documentation workflows\r\n- Common limitations and risks of AI-generated content\r\n- Why human judgment, testing, and audience understanding still matter\r\n- Strategies for integrating AI while maintaining quality and trust\r\n\r\nParticipants will leave with a balanced perspective on AI and a clearer understanding of how technical writers can adapt and grow alongside emerging technologies.",
+        "speakers": [
+          "Tonny Gidraph"
+        ],
+        "startsAt": "09:20",
+        "endsAt": "09:40",
+        "room": "Main Stage",
+        "format": "Lightning talk",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1233032",
+        "title": "Navigating Documentation Challenges: Success Stories from the OpenMRS Wiki Revamp Project",
+        "description": "If you've seen or used a wiki and immediately wished you hadn't, you already know the feeling I want to talk about.\r\n\r\nThat was the OpenMRS Wiki when I first got my hands on it.\r\n\r\nAfter years of contributions from a global community that spread across hundreds of pages, the wiki had lost structure.\r\n\r\nYou had outdated guides sitting next to current ones, and any information you needed was buried three clicks deep under information you didn't.\r\n\r\nFor four months, I led the project to fix it.\r\n\r\nAnd what I want to share at WTD Kenya is what that work actually looked like, because \"we revamped the wiki\" makes it sound a lot cleaner than it was.\r\n\r\nThis talk walks through the maze-like pattern of large-scale documentation work. My talk aims to answer questions like:\r\n\r\n- How do you audit content when there's too much of it to read in one sitting?\r\n\r\n- How do you restructure an Information Architecture that an entire community has spent years building muscle memory around?\r\n\r\n- How do you make decisions about what stays, what goes, and what gets rewritten without breaking the trust of contributors scattered across every time zone?\r\n\r\nAnd maybe the hardest question of all: how do you build something that doesn't fall right back into chaos the moment you step away?\r\n\r\nI'll share the things that worked, the things that didn't, and the small choices that turned out to matter way more than I expected.\r\n\r\nThe goal isn't to hand anyone a perfect playbook, because there isn't one. It's to give you a real look at what it takes to untangle documentation at scale, so when you face your own version of this — and if you work in docs long enough, you will — you'll have some patterns to reach for.\r\n\r\n\r\n------------------------\r\nTLDR:\r\n\r\nFor a longer version of this description, here's a link to a Google Doc: https://docs.google.com/document/d/1LtRXSiq6kDzljKjwOIMtg5igvhVbmcFq7eJ6jTzypbE/edit?usp=sharing\r\n-------------------------",
+        "speakers": [
+          "Prince Onyeanuna"
+        ],
+        "startsAt": "09:45",
+        "endsAt": "10:05",
+        "room": "Main Stage",
+        "format": "Lightning talk",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1234561",
+        "title": "Documenting an AI That Sees the Physical World: Building a CI/CD Pipeline for Foundation Model Docs",
+        "description": "AI products break documentation faster than any software category before them. Model behaviour shifts between releases, SDK surface areas expand weekly, and code examples that worked on Monday return different outputs by Friday. For developer-facing AI platforms, \"docs as code\" stops being a nice-to-have and becomes the only way to keep pace.\r\nIn this talk, I'll walk through how I built an end-to-end documentation CI/CD pipeline for a physical AI foundation model platform, one that ingests multimodal sensor data through a Python SDK and REST API. Using Mintlify, GitHub Actions, and Vale, we layered validation so documentation shipped with the same rigour as the product: prose linting tuned to our voice, broken link detection across internal and external references, code sample validation so examples never went stale, and preview deployments that let engineers review docs the same way they review pull requests.\r\nI'll share what didn't work the first time: overly strict Vale rules that turned every PR into a fight, link checkers that flagged false positives until we tuned them, and the cultural work of getting engineers to actually engage with doc reviews.\r\nAttendees will leave with a concrete blueprint: which checks to add first, how to layer them without slowing contributors down, and how to keep AI documentation honest when the underlying model keeps moving.\r\nYou'll leave with:\r\n\r\nA staged checklist of doc CI/CD validations ranked by ROI\r\nVale + Mintlify configuration patterns specific to AI/ML platform docs\r\nGitHub Actions workflows for docs that won't annoy your engineers\r\nHow to keep code examples valid against a moving model target",
+        "speakers": [
+          "Daisy Auma"
+        ],
+        "startsAt": "10:15",
+        "endsAt": "10:45",
+        "room": "Main Stage",
+        "format": "Session",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1233298",
+        "title": "Understand LLMs and RAG basics to write better product content",
+        "description": "We'll solve this scenario:\r\n\r\nYou content leadership is questioning why customers sometimes receive inaccurate responses from external AI search tools like Google or Bing AI Overview when interacting with your content.\r\n\r\nAs a technical writer, you need to understand how AI interprets and uses product documentation so you can structure your content in a way that improves accurate retrieval, reduces hallucinations, and ensures your documentation remains a reliable source—without requiring you to become a developer.",
+        "speakers": [
+          "Derdus Kenga"
+        ],
+        "startsAt": "10:55",
+        "endsAt": "11:25",
+        "room": "Main Stage",
+        "format": "Session",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1212377",
+        "title": "From App Engine to Cloud Run: A Docker Migration Story",
+        "description": "Migration to Cloud Run from Google App Engine involves not just technical issues, but also the need for thorough documentation. This presentation will cover the ease of migration due to Docker and demonstrate why good documentation plays a key role in the process.\r\n\r\nWe will provide a hands-on demonstration where we migrate a sample application deployed on Google App Engine to Docker containers and then deploy them to Cloud Run. This will help us understand how proper documentation can solve many problems related to documentation itself, including reproducibility.\r\n\r\nBy the end of this presentation, you will have a better understanding of documenting Docker workflows and the best practices for writing a migration guide.",
+        "speakers": [
+          "Samuel Macharia",
+          "Ephraim Mwereza"
+        ],
+        "startsAt": "11:30",
+        "endsAt": "12:10",
+        "room": "Main Stage",
+        "format": "Workshop",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1238170",
+        "title": "The 5-Minute README Fix: Small Changes, Big Impact",
+        "description": "Every open‑source project starts with a README — but most READMEs are written for people who already understand the project. What about the newcomer?\r\n\r\nIn this lightning talk, I’ll show you three fixes you can make in five minutes or less that turn a confusing README into a welcoming, usable front door. No heavy rewrites. No perfect prose. Just small, human actions: adding a clear “what this does” first line, writing a setup step a beginner could follow, and including one obvious place to ask for help.\r\n\r\nI’ve mentored dozens of students and new contributors. The biggest barrier is never the code — it’s the documentation that assumes too much. Let’s change that together.",
+        "speakers": [
+          "Bethwel Kiplagat"
+        ],
+        "startsAt": "12:15",
+        "endsAt": "12:35",
+        "room": "Main Stage",
+        "format": "Lightning talk",
+        "level": "Introductory and overview"
+      },
+      {
+        "id": "1233669",
+        "title": "The APT Approach to Documentation: Consistency Over CV Padding",
+        "description": "In cybersecurity, an APT — Advanced Persistent Threat — isn’t flashy. It doesn’t rush. It shows up consistently, learns the terrain, and plays a long game most defenders don’t have the patience for.\r\n\r\nWhat if documentarians adopted the same long-game mindset? Not for breaching networks, but for building documentation that outlasts sprint cycles, job hops, and the temptation to copy-paste from Western templates.\r\n\r\nThis talk reimagines the APT as a metaphor for the kind of technical communicator Africa needs: patient, adaptive, vision-driven, and committed to building something real — not just a CV.\r\n\r\nI’ll share how shifting from “building a CV” to “building a dream” changed my own work, from red team tools to youth empowerment, and why the best documentation comes from consistent, self-respecting creation, not mimicry. Attendees will leave with a mental model for long-term documentation impact that has nothing to do with tools and everything to do with identity.",
+        "speakers": [
+          "Mosongo Danfold"
+        ],
+        "startsAt": "12:40",
+        "endsAt": "13:00",
+        "room": "Main Stage",
+        "format": "Lightning talk",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1231946",
+        "title": "How Cursor Uses Documentation to Build Better AI Coding Workflows",
+        "description": "AI coding tools are changing how we write software — but I’ve learned that behind every great AI-generated response is great documentation.\r\n\r\nIn this lightning talk, I’ll share how I use Cursor’s documentation indexing and retrieval workflows to build faster and more accurate AI-assisted development experiences. I’ll walk through how modern AI coding tools rely on documentation retrieval, embeddings, and contextual search to reduce hallucinations and generate better code suggestions.\r\n\r\nUsing practical demos and real-world workflows from my experience as a software engineer and Cursor Regional Lead for Africa, I’ll show how documentation is becoming a core part of the AI development stack — not just something written after the code is complete.\r\n\r\nIn this session, I’ll cover:\r\n\r\nHow I use Cursor to index and retrieve documentation\r\nWhy AI coding assistants depend on high-quality documentation\r\nHow I structure documentation for better AI workflows\r\nCommon mistakes I’ve seen with AI-generated documentation\r\nHow developers and technical writers can collaborate better in AI-native teams\r\n\r\nWhether you are a developer, technical writer, DevRel engineer, or documentation enthusiast, I hope this session gives you practical insight into the future of documentation in the age of AI-assisted software development.\r\n\r\nKey Takeaway:\r\nI believe AI coding assistants are only as good as the documentation they can retrieve.",
+        "speakers": [
+          "Felix Jumason"
+        ],
+        "startsAt": "14:05",
+        "endsAt": "14:30",
+        "room": "Main Stage",
+        "format": "Session",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1212755",
+        "title": "Code is Cheap, Context is Expensive: Docs that Survive the FinTech Fire",
+        "description": "In high-stakes environments—like USSD banking cores, payment gateways, and blockchain infrastructure—the most dangerous bug isn't a syntax error; it's ambiguity. When a mission-critical system fails at 3:00 AM, \"pretty\" documentation is useless. You need a flight manual.\r\n\r\nMost documentation is written for the \"Happy Path\"—explaining how things work when everything is fine. This session flips the script. Drawing from years of building high-concurrency backend systems in Nairobi’s FinTech ecosystem, I will argue that documentation is a safety-critical engineering component, not a post-project chore.\r\n\r\nWe will move past the \"how-to\" and dive into Operational Documentation: the art of writing for resilience, clarity under pressure, and absolute accountability.\r\nKey Takeaways:\r\n\r\n    The Zero-Context Principle: How to document for the \"paged\" developer who has zero mental context and a ticking SLA clock.\r\n\r\n    Documentation as a Compiler Constraint: Using Go/Rust schemas and Protobufs to ensure your docs are technically incapable of lying.\r\n\r\n    The QRH Framework: Why your READMEs should look more like Aviation Quick Reference Handbooks and less like blog posts.\r\n\r\n    Failure-Mode First: Shifting focus from \"How to start\" to \"How it breaks\" to drastically reduce Mean Time to Recovery (MTTR).\r\n\r\n    The AI Agent Ready-Room: Structuring your docs so that the next generation of autonomous coding agents can actually help you fix bugs instead of hallucinating them.",
+        "speakers": [
+          "Alias Nutcase"
+        ],
+        "startsAt": "14:35",
+        "endsAt": "15:00",
+        "room": "Main Stage",
+        "format": "Session",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1240152",
+        "title": "Cultivating AI Literacy: Making Tech Documentation Inclusive for All Communities",
+        "description": "As artificial intelligence continues to reshape our digital landscape, the gap between complex technical documentation and grass-roots community understanding widens. This interactive workshop focuses on strategies for breaking down advanced AI concepts and technical workflows into highly accessible, community-friendly documentation.\r\nParticipants will explore practical frameworks for designing inclusive manuals, leveraging localized examples, and ensuring that digital literacy materials are structured to empower diverse audiences, regardless of their technical background.",
+        "speakers": [
+          "Leen Kirau Noted"
+        ],
+        "startsAt": "15:05",
+        "endsAt": "15:45",
+        "room": "Main Stage",
+        "format": "Workshop",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1248199",
+        "title": "Docs in the Real World: Platforms, AI, and the Cost of Getting It Right",
+        "description": "Behind every great documentation site is a series of hard decisions — and a few expensive lessons. This session draws from hands-on experience owning and maintaining API and platform documentation, including the realities of evaluating, adopting, and sometimes reconsidering third-party docs platforms as they evolve, reprice, and reshape themselves around AI.\r\nWe'll explore three threads that are increasingly intertwined in modern documentation work: the rise of AI tooling (MCP servers, markdown-native workflows, and what it means when your docs platform leans into LLM integrations); the challenge of internationalization and what \"inclusive docs\" actually costs in practice; and the quieter, often underappreciated work of building docs-as-code pipelines that actually get engineers to contribute.\r\nWhether you're a seasoned technical writer navigating platform migrations, a developer who has ever been intimidated opening an API reference for the first time, or someone just starting out and weighing your tooling options; this session offers honest perspective on the trade-offs, the wins, and what to watch out for.",
+        "speakers": [
+          "Stanley Ndagi"
+        ],
+        "startsAt": "09:20",
+        "endsAt": "09:40",
+        "room": "Breakout Room 1",
+        "format": "Lightning talk",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1248852",
+        "title": "The Docs We Don't Call Documentation",
+        "description": "For the longest time, if you had asked me what documentation was, I would have pointed you to API docs, a README perhaps or a technical manual.\r\n\r\nAfter all, whenever people in tech said \"document it,\" that's what I imagined they meant.\r\n\r\nThen I started noticing something interesting.\r\n\r\nThe product manager maintained a PRD that everyone referenced before making decisions. The ops team had a Notion workspace explaining how things actually got done. Someone created an onboarding guide for themselves, and months later it had become required reading for every new hire.\r\n\r\nNone of these people called themselves technical writers.\r\n\r\nYet they were all documenting.\r\n\r\nThat's when I realized that some of the most important documentation in our organizations isn't even called documentation.\r\n\r\nThis talk explores the hidden documentation that powers collaboration every day. We'll uncover how knowledge is captured, shared, and preserved by people in roles that don't traditionally identify as \"documentation roles.\"\r\n\r\nBy broadening our understanding of documentation, we can create more inclusive documentation cultures where everyone sees themselves as contributors to shared knowledge rather than documentation being the responsibility of a single team or individual.\r\n\r\nWhether you're a developer, designer, product manager,  or someone who's been told to document their work, this session will help you recognize the documentation already happening around you and understand why it matters.\r\n\r\nKey Takeaways\r\n- Why documentation is not just a developer or technical writer responsibility.\r\n- How to recognize the documentation already happening within your team, even if no one calls it documentation\r\n- Simple ways to start capturing processes, decisions, and knowledge regardless of your role or technical background\r\n- How shared documentation reduces the \"ask me every time\" problem and strengthens collaboration\r\n- Lightweight tools and approaches that non-coding professionals can use to document effectively",
+        "speakers": [
+          "Hidaya Vanessa"
+        ],
+        "startsAt": "09:45",
+        "endsAt": "10:05",
+        "room": "Breakout Room 1",
+        "format": "Lightning talk",
+        "level": "Introductory and overview"
+      },
+      {
+        "id": "1218346",
+        "title": "Multilingual docs without losing your mind (or your meaning)",
+        "description": "Kenya alone has 68 languages. How do you build localisation workflows that scale, maintain quality across translations, and resist the temptation to just run everything through Google Translate and call it done?",
+        "speakers": [
+          "Caleb Jephuneh"
+        ],
+        "startsAt": "10:15",
+        "endsAt": "10:45",
+        "room": "Breakout Room 1",
+        "format": "Session",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1242444",
+        "title": "Beyond the Notebook: Architecting Organizational Memory for ML Teams",
+        "description": "People often say machine learning is all about building models, but really, it’s more about wrangling knowledge. If you’ve worked on a real ML project, you know how easy it is for key decisions to disappear—one day you’re discussing why a model needs a tweak, and by next week, the reasoning is buried in an old teams thread or lost in a passing comment. Notebooks fill up, messages scatter, crucial context fades away. So teams end up with \"documentation debt\": a growing pile of missing explanations that triples the time it takes to onboard someone new, leads to teams re-running the same failed experiments, and quietly erodes true collaboration.\r\n\r\nThis talk argues we need to ditch our passive approach to ML documentation. Treating documentation as an afterthought hasn’t worked. Instead, what if teams deliberately designed collaboration right into their ML workflows? Imagine systems that don’t just log numbers—they record why you tried a new architecture, what trade-offs you debated, or how you handled weird data artifacts.\r\n\r\nWe will introduce a practical framework built around three components: structured decision logs, experiment tracking with context, and data documentation that preserves meaning and lineage. We will also explore how AI tools can help translate technical experiment results into clear summaries for both engineers and non-technical stakeholders.\r\n\r\nWhen you walk out of this talk, you’ll have a practical blueprint for running and improving collaboration, onboarding, and long-term maintainability in ML projects.",
+        "speakers": [
+          "Zawadi Mukuru",
+          "Sandra Kimiring"
+        ],
+        "startsAt": "10:55",
+        "endsAt": "11:25",
+        "room": "Breakout Room 1",
+        "format": "Session",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1243088",
+        "title": "From Static Docs to Executables: Building Replayable and Verifiable Documentation Workflows",
+        "description": "Technical documentation has evolved significantly through the docs-as-code movement. We version documentation, review it in pull requests, and publish it through CI/CD pipelines.\r\n\r\nBut one major problem still remains:\r\n\r\nMost technical documentation is static, while the systems it describes are dynamic and changing with every turn of deployment.\r\n\r\nAs a result, UI walkthroughs drift, screenshots become outdated, tutorials silently break and quick starts fail. Browser demos depend on fragile manual steps and endless re-recording.\r\n\r\nIn this talk, I’ll introduce slides-tape, a Markdown-first orchestration engine for executable technical content. slides-tape combines presentations, browser automation, terminal execution, narration, and recording into a unified workflow that allows documentation and demos to become replayable, verifiable, and reproducible.\r\n\r\nWe’ll explore:\r\n\r\n* how browser automation can power executable tutorials\r\n* how deterministic replay changes technical storytelling\r\n* how “docs-as-test” workflows can continuously validate onboarding guides and demos\r\n* how Markdown can evolve from static content into executable developer experiences\r\n\r\nThe session will include live examples of browser-driven documentation flows, automated demo playback, and verification pipelines that ensure tutorials continue working as products evolve.",
+        "speakers": [
+          "Job Alex Muturi"
+        ],
+        "startsAt": "11:30",
+        "endsAt": "12:10",
+        "room": "Breakout Room 1",
+        "format": "Workshop",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1232866",
+        "title": "From Dead Docs to Searchable Knowledge",
+        "description": "Most engineering teams already have documentation in Notion pages, Google Docs, GitHub READMEs and internal wikis. The challenge is that finding the right information quickly is often harder than writing it again or asking someone on the team. This session explores how Retrieval-Augmented Generation (RAG) can transform scattered internal documentation into searchable, context-aware knowledge systems that developers actually use.",
+        "speakers": [
+          "Bret Oreta"
+        ],
+        "startsAt": "14:05",
+        "endsAt": "14:30",
+        "room": "Breakout Room 1",
+        "format": "Session",
+        "level": "Intermediate"
+      },
+      {
+        "id": "1212513",
+        "title": "Tailoring Open source contribution for career transitions",
+        "description": "Breaking into tech can feel intimidating. \r\nFrom the outside, it often looks like a closed club with its own language, rules, and insiders. But here’s the reality: tech communities are the bridge that transforms outsiders into insiders and they are open to anyone willing to engage.",
+        "speakers": [
+          "Jimmy Tron"
+        ],
+        "startsAt": "15:05",
+        "endsAt": "15:35",
+        "room": "Breakout Room 1",
+        "format": "Session",
+        "level": "Introductory and overview"
+      }
+    ],
+    "breaks": [
+      {
+        "id": "lunch-break",
+        "title": "Lunch Break & Group Photo",
+        "startsAt": "13:00",
+        "endsAt": "14:05"
+      }
+    ]
+  }
+}

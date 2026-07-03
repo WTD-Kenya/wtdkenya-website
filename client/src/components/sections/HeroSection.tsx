@@ -53,18 +53,13 @@ export default function HeroSection() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              className="bg-accent-orange text-white hover:bg-accent-orange/90 hover:scale-105 transition-transform duration-200"
-              onClick={() => window.open('https://your-link-here.com', '_blank')}
+              className="bg-kenya-red text-white hover:bg-kenya-red hover:scale-105 transition-transform duration-200"
+              onClick={() => window.open('https://www.meetup.com/wtd-kenya/', '_blank')}
             >
               Join the Community
             </Button>
-            
-            {/* <Button className="bg-kenya-red hover:bg-kenya-red/90 text-white shadow-lg">
-              <i className="fas fa-users mr-2"></i>
-              Join the Community
-            </Button> */}
-            <Link href="/events">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/conference">
+              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-gray-900">
                 <i className="fas fa-calendar mr-2"></i>
                 View Upcoming Events
               </Button>

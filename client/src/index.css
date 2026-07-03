@@ -25,6 +25,7 @@
   --radius: 0.5rem;
   
   /* Kenya Theme Colors */
+  --kenya-black: hsl(0, 0%, 7%);
   --kenya-red: hsl(0, 74%, 50%);
   --kenya-green: hsl(120, 65%, 40%);
   --accent-orange: hsl(38, 92%, 50%);
@@ -64,6 +65,10 @@
 }
 
 @layer utilities {
+  .text-kenya-black {
+    color: hsl(0, 0%, 7%);
+  }
+
   .text-kenya-red {
     color: hsl(0, 74%, 50%);
   }
@@ -76,6 +81,10 @@
     color: hsl(38, 92%, 50%);
   }
   
+  .bg-kenya-black {
+    background-color: hsl(0, 0%, 7%);
+  }
+
   .bg-kenya-red {
     background-color: hsl(0, 74%, 50%);
   }
@@ -88,6 +97,10 @@
     background-color: hsl(38, 92%, 50%);
   }
   
+  .border-kenya-black {
+    border-color: hsl(0, 0%, 7%);
+  }
+
   .border-kenya-red {
     border-color: hsl(0, 74%, 50%);
   }

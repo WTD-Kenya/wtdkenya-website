@@ -11,12 +11,21 @@ import Event_Gallery from "@/components/Event_Gallery.tsx";
 import type { MeetupEvent } from "@/lib/types";
 
 export default function Events() {
-  const { data: events, isLoading, error } = useQuery<MeetupEvent[]>({
-    queryKey: ["/api/events"],
+  const {
+    data: upcomingEvents,
+    isLoading: upcomingLoading,
+    error: upcomingError,
+  } = useQuery<MeetupEvent[]>({
+    queryKey: ["/api/events?status=upcoming"],
   });
 
-  const upcomingEvents = events?.filter(event => new Date(event.dateTime) > new Date()) || [];
-  const pastEvents = events?.filter(event => new Date(event.dateTime) <= new Date()) || [];
+  const {
+    data: pastEvents,
+    isLoading: pastLoading,
+    error: pastError,
+  } = useQuery<MeetupEvent[]>({
+    queryKey: ["/api/events?status=past"],
+  });
 
   return (
     <div className="min-h-screen bg-white">
@@ -48,8 +57,8 @@ export default function Events() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-12">Upcoming Events</h2>
-            
-            {isLoading && (
+
+            {upcomingLoading && (
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {[...Array(6)].map((_, i) => (
                   <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden p-6">
@@ -63,8 +72,8 @@ export default function Events() {
                 ))}
               </div>
             )}
-            
-            {error && (
+
+            {upcomingError && (
               <Alert className="max-w-md mx-auto">
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>
@@ -72,8 +81,8 @@ export default function Events() {
                 </AlertDescription>
               </Alert>
             )}
-            
-            {events && upcomingEvents.length === 0 && (
+
+            {upcomingEvents && upcomingEvents.length === 0 && !upcomingLoading && (
               <div className="text-center py-12">
                 <i className="fas fa-calendar-plus text-gray-400 text-6xl mb-4"></i>
                 <p className="text-gray-600 text-lg">No upcoming events scheduled.</p>
@@ -84,8 +93,8 @@ export default function Events() {
                 </Button>
               </div>
             )}
-            
-            {upcomingEvents.length > 0 && (
+
+            {upcomingEvents && upcomingEvents.length > 0 && (
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {upcomingEvents.map((event) => (
                   <EventCard key={event.id} event={event} />
@@ -96,11 +105,39 @@ export default function Events() {
         </section>
 
         {/* Past Events */}
-        {pastEvents.length > 0 && (
-          <section className="py-16 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-12">Past Events</h2>
-              
+        <section id="past-events" className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-12">Past Events</h2>
+
+            {pastLoading && (
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {[...Array(3)].map((_, i) => (
+                  <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden p-6">
+                    <Skeleton className="h-4 w-20 mb-3" />
+                    <Skeleton className="h-6 w-full mb-3" />
+                    <Skeleton className="h-4 w-full mb-2" />
+                    <Skeleton className="h-4 w-3/4 mb-4" />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {pastError && (
+              <Alert className="max-w-md mx-auto">
+                <AlertCircle className="h-4 w-4" />
+                <AlertDescription>
+                  Unable to load past events at this time. Please check back later or visit our Meetup page directly.
+                </AlertDescription>
+              </Alert>
+            )}
+
+            {pastEvents && pastEvents.length === 0 && !pastLoading && (
+              <div className="text-center py-12">
+                <p className="text-gray-600 text-lg">No past events yet.</p>
+              </div>
+            )}
+
+            {pastEvents && pastEvents.length > 0 && (
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {pastEvents.map((event) => (
                   <div key={event.id} className="bg-white rounded-xl shadow-lg overflow-hidden opacity-75">
@@ -108,9 +145,9 @@ export default function Events() {
                   </div>
                 ))}
               </div>
-            </div>
-          </section>
-        )}
+            )}
+          </div>
+        </section>
 
         {/* Photo Gallery */}
         <section className="py-16 bg-white">

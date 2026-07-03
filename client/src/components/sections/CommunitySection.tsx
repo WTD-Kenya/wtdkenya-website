@@ -16,7 +16,7 @@ export default function CommunitySection() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Our Thriving Community</h2>
+          <h2 className="text-3xl font-bold text-kenya-black sm:text-4xl">Our Thriving Community</h2>
           <p className="mt-4 text-xl text-gray-600">Join hundreds of passionate documentation enthusiasts</p>
         </div>
         
@@ -25,17 +25,17 @@ export default function CommunitySection() {
             <>
               <div className="text-center">
                 <div className="text-4xl font-bold text-kenya-red">{stats.members}</div>
-                <div className="mt-2 text-lg font-medium text-gray-900">Active Members</div>
+                <div className="mt-2 text-lg font-medium text-kenya-black">Active Members</div>
                 <div className="mt-1 text-gray-600">Writers, developers, and documentarians</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-kenya-green">{stats.events}</div>
-                <div className="mt-2 text-lg font-medium text-gray-900">Events Hosted</div>
+                <div className="mt-2 text-lg font-medium text-kenya-black">Events Hosted</div>
                 <div className="mt-1 text-gray-600">Workshops, talks, and networking</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-accent-orange">{stats.posts}</div>
-                <div className="mt-2 text-lg font-medium text-gray-900">Blog Posts</div>
+                <div className="text-4xl font-bold text-kenya-black">{stats.posts}</div>
+                <div className="mt-2 text-lg font-medium text-kenya-black">Blog Posts</div>
                 <div className="mt-1 text-gray-600">Shared knowledge and insights</div>
               </div>
             </>
