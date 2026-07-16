@@ -1,7 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-// import galleryRoutes from "./routes"; // or wherever you put the above code
 
 // Import dotenv to load .env variables (for Cloudinary, etc.)
 import dotenv from "dotenv";
@@ -61,19 +60,16 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Serve the app on port 5000 (API + client)
-  const port = 5000;
+  // Serve the app (API + client). Defaults to 5050 since macOS reserves
+  // port 5000 for ControlCenter/AirPlay Receiver.
+  const port = process.env.PORT ? Number(process.env.PORT) : 5050;
   server.listen(
     {
       port,
       host: "0.0.0.0",
-      reusePort: true,
     },
     () => {
       log(`serving on port ${port}`);
     }
   );
-
-  // Register gallery routes
-  app.use(galleryRoutes);
 })();
