@@ -1,7 +1,7 @@
 # Write the Docs Kenya Website
 
 A modern web platform for the Write the Docs Kenya community, featuring event highlights, blog posts, community resources, and more.  
-This project includes a React (Vite) frontend and a Django backend.
+This project is a single Node.js app: a React (Vite) frontend served together with an Express API (Meetup/Hashnode/Cloudinary proxy).
 
 ---
 
@@ -13,8 +13,7 @@ This project includes a React (Vite) frontend and a Django backend.
   - [Tech Stack](#tech-stack)
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
-    - [Frontend Setup](#frontend-setup)
-    - [Backend Setup](#backend-setup)
+    - [Setup](#setup)
   - [Project Structure](#project-structure)
   - [Development Scripts](#development-scripts)
   - [Contributing](#contributing)
@@ -36,8 +35,8 @@ This project includes a React (Vite) frontend and a Django backend.
 ## Tech Stack
 
 - **Frontend:** React, TypeScript, Vite, Tailwind CSS, Radix UI, React Query
-- **Backend:** Django, PostgreSQL, Drizzle ORM
-- **Other:** Hashnode API, Meetup API, Cloudinary, Zod, Express (for API proxy/server)
+- **Backend:** Express (Node.js) — API proxy for Meetup/Hashnode/Cloudinary, Drizzle ORM + PostgreSQL for contact form submissions
+- **Other:** Hashnode API, Meetup API, Cloudinary, Zod
 
 ---
 
@@ -46,53 +45,33 @@ This project includes a React (Vite) frontend and a Django backend.
 ### Prerequisites
 
 - Node.js (v18+ recommended)
-- Python 3.11+
-- PostgreSQL
+- PostgreSQL (optional — only needed if you want contact form submissions to persist; the app runs fine without it)
 
 ---
 
-### Frontend Setup
+### Setup
 
 ```bash
-cd client
 npm install
 npm run dev
 ```
-- The app will be available at `http://localhost:4000` (or as specified by Vite).
+- This starts a single server (Express + Vite middleware) serving both the frontend and the `/api/*` routes.
+- Defaults to `http://localhost:5050` (macOS reserves port 5000 for ControlCenter/AirPlay). Override with `PORT=xxxx npm run dev`.
+- To enable live Meetup events, blog posts, or gallery images, create a `.env` file in the project root with `MEETUP_API_KEY`, `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`. Without it, those sections gracefully fall back to sample content.
+- To enable contact form persistence, also set `DATABASE_URL` (a Postgres/Neon connection string) and run `npm run db:push`.
 
----
-
-### Backend Setup
-
-1. **Install Python dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-   Or, if using Poetry:
-   ```bash
-   poetry install
-   ```
-
-2. **Set up environment variables:**  
-   Create a `.env` file in the root with your database and API keys (see `writethedocs_ke/settings.py` for required variables).
-
-3. **Run migrations:**
-   ```bash
-   python manage.py migrate
-   ```
-
-4. **Start the backend:**
-   ```bash
-   python manage.py runserver
-   ```
-   The backend will run at `http://localhost:8000` by default.
+For production:
+```bash
+npm run build   # builds the frontend (dist/public) and bundles the server (dist/index.js)
+npm start        # runs the production server
+```
 
 ---
 
 ## Project Structure
 
 ```
-WriteDocsKenya/
+wtdkenya-website/
   client/           # React frontend (Vite, TypeScript)
     src/
       public/       # Static files (e.g., markdown files)
@@ -101,8 +80,7 @@ WriteDocsKenya/
       hooks/        # Custom React hooks
       pages/        # App pages (Home, Blog, Events, etc.)
       lib/          # Types, utilities, query client
-  server/           # Express/Node server (API proxy, etc.)
-  writethedocs_ke/  # Django backend
+  server/           # Express server (API proxy, Vite integration)
   shared/           # Shared schema/types
 ```
 
@@ -112,10 +90,11 @@ WriteDocsKenya/
 
 From the project root:
 
-- `npm run dev` (in `client/`): Start the frontend in development mode
-- `python manage.py runserver`: Start the Django backend
-- `npm run build` (in `client/`): Build the frontend for production
-- `npm run db:push`: Push Drizzle ORM migrations
+- `npm run dev`: Start the app (frontend + API) in development mode
+- `npm run build`: Build the frontend and bundle the server for production
+- `npm start`: Run the production build
+- `npm run check`: Type-check the project
+- `npm run db:push`: Push Drizzle ORM migrations (requires `DATABASE_URL`)
 
 ---
 
