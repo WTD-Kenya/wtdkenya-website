@@ -1,18 +1,27 @@
-import React from "react";
+import conferenceData from "@/data/upcomingConference.json";
 
 export default function VenueSection() {
+  const { venue } = conferenceData.event;
+  const mapQuery = encodeURIComponent(`${venue}, Kenya`);
+
   return (
     <section id="venue" className="py-20 bg-red-50">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-kenya-red mb-12">Venue & Location</h2>
         <p className="text-lg text-gray-700 mb-6">Join us at our state-of-the-art venue designed for optimal learning and networking.</p>
-        
+
         <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 className="text-xl font-semibold text-kenya-black mb-2">KCA University</h3>
-          <p className="text-gray-700">Nairobi, Kenya</p>
-          <div className="mt-6 w-full h-80 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
-            {/* Placeholder for embedded map */}
-            Embedded Map Here (e.g., Google Maps iframe)
+          <h3 className="text-xl font-semibold text-kenya-black mb-2">{venue}</h3>
+          <div className="mt-6 w-full h-80 rounded-lg overflow-hidden">
+            <iframe
+              title={`Map showing ${venue}`}
+              src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
           <div className="mt-6 text-left">
             <h4 className="text-lg font-semibold text-gray-800 mb-2">Directions & Transportation:</h4>
