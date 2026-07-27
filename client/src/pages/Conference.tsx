@@ -2,9 +2,7 @@
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import HeroSection from "@/components/consection/HeroSec";
-import AboutSection from "@/components/consection/AboutSec";
-import ScheduleSection from "@/components/consection/ScheduleSection";
+import HeroScheduleSection from "@/components/consection/HeroScheduleSection";
 import SpeakersSection from "@/components/consection/SpeakersSection";
 import VenueSection from "@/components/consection/VenueSection";
 import SponsorsSection from "@/components/consection/SponsorsSection";
@@ -42,9 +40,7 @@ export default function Conference() {
 
             <main className="scroll-smooth">
                 {/* Main content sections for the conference page */}
-                <HeroSection />
-                <AboutSection />
-                <ScheduleSection />
+                <HeroScheduleSection />
                 <SpeakersSection />
                 <VenueSection />
                 <SponsorsSection />

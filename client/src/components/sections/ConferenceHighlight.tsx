@@ -1,10 +1,15 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import RegistrationClosedDialog from "@/components/RegistrationClosedDialog";
 import conferenceData from "@/data/upcomingConference.json";
 
 export default function ConferenceHighlight() {
   const { event, speakers, schedule } = conferenceData;
   const featuredSpeakers = speakers.filter((speaker) => speaker.image).slice(0, 6);
+  const sessionCount = schedule.agenda.reduce(
+    (count, item) => count + (item.items?.length || item.tracks?.length || (item.speakers ? 1 : 0)),
+    0
+  );
 
   return (
     <section className="py-16 bg-kenya-black text-white">
@@ -20,7 +25,7 @@ export default function ConferenceHighlight() {
             </p>
             <p className="text-gray-300 text-lg mb-8">
               A day of talks, workshops, and networking with {speakers.length} speakers across{" "}
-              {schedule.sessions.length} sessions.
+              {sessionCount} sessions.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/conference">
@@ -28,14 +33,16 @@ export default function ConferenceHighlight() {
                   View Schedule & Speakers
                 </Button>
               </Link>
-              <a href={event.registrationLink} target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-kenya-black"
-                >
-                  Register Now
-                </Button>
-              </a>
+              <RegistrationClosedDialog
+                trigger={
+                  <Button
+                    variant="outline"
+                    className="bg-transparent border-white text-white hover:bg-white hover:text-kenya-black"
+                  >
+                    Register Now
+                  </Button>
+                }
+              />
             </div>
           </div>
 
