@@ -1,7 +1,6 @@
 # Write the Docs Kenya Website
 
-A modern web platform for the Write the Docs Kenya community, featuring event highlights, blog posts, community resources, and more.  
-This project is a single Node.js app: a React (Vite) frontend served together with an Express API (Meetup/Hashnode/Cloudinary proxy).
+A modern web platform for the Write the Docs Kenya community, featuring event highlights, blog posts, community resources, and more.
 
 ---
 
