@@ -39,20 +39,17 @@ function TimeRange({ item }: { item: { startsAt: string; endsAt: string } }) {
   );
 }
 
-function FormatTags({ format, level }: { format?: string; level?: string }) {
-  if (!format && !level) return null;
+function FormatTags({ format }: { format?: string }) {
+  if (!format) return null;
   return (
     <div className="flex flex-wrap gap-2 mt-1 mb-1">
-      {format && (
-        <span
-          className={`text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded ${
-            FORMAT_STYLES[format] || "bg-gray-100 text-gray-800"
-          }`}
-        >
-          {format}
-        </span>
-      )}
-      {level && <span className="text-xs font-medium px-2 py-0.5 rounded bg-gray-100 text-gray-700">{level}</span>}
+      <span
+        className={`text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded ${
+          FORMAT_STYLES[format] || "bg-gray-100 text-gray-800"
+        }`}
+      >
+        {format}
+      </span>
     </div>
   );
 }
@@ -69,21 +66,27 @@ function AgendaCard({ item }: { item: AgendaItem }) {
       }
     >
       <TimeRange item={item} />
-      {"format" in item && <FormatTags format={item.format} level={"level" in item ? item.level : undefined} />}
+      {"format" in item && <FormatTags format={item.format} />}
       <h3 className={`text-xl font-bold ${isBreak ? "text-kenya-green" : "text-kenya-black"}`}>{item.title}</h3>
       {"speakers" in item && item.speakers && (
         <p className="text-gray-600 text-sm mt-1">{item.speakers.join(" & ")}</p>
       )}
+      {"facilitator" in item && item.facilitator && (
+        <p className="text-gray-600 text-sm mt-1">Facilitated by {item.facilitator}</p>
+      )}
       {item.location && <p className="text-gray-500 text-sm mt-1">{item.location}</p>}
       {item.description && <p className="text-gray-700 text-sm mt-2">{item.description}</p>}
       {"panelists" in item && item.panelists && (
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {item.panelists.map((panelist) => (
-            <li key={panelist} className="text-xs font-medium px-2 py-1 rounded bg-gray-100 text-gray-700">
-              {panelist}
-            </li>
-          ))}
-        </ul>
+        <div className="mt-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">Panelists</p>
+          <ul className="flex flex-wrap gap-2">
+            {item.panelists.map((panelist) => (
+              <li key={panelist} className="text-xs font-medium px-2 py-1 rounded bg-gray-100 text-gray-700">
+                {panelist}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       {"items" in item && item.items && (
@@ -91,7 +94,7 @@ function AgendaCard({ item }: { item: AgendaItem }) {
           {item.items.map((talk) => (
             <li key={talk.title} className="border-t border-gray-100 pt-3 first:border-t-0 first:pt-0">
               <TimeRange item={talk} />
-              <FormatTags format={talk.format} level={talk.level} />
+              <FormatTags format={talk.format} />
               <p className="font-semibold text-kenya-black">{talk.title}</p>
               <p className="text-gray-600 text-sm">{talk.speakers.join(" & ")}</p>
             </li>
@@ -106,7 +109,7 @@ function AgendaCard({ item }: { item: AgendaItem }) {
               <div className="text-xs font-semibold uppercase tracking-wide text-kenya-green mb-1">
                 {track.label}
               </div>
-              <FormatTags format={track.format} level={track.level} />
+              <FormatTags format={track.format} />
               <p className="font-semibold text-kenya-black text-sm">{track.topic}</p>
               <p className="text-gray-600 text-sm mt-1">{track.facilitator}</p>
             </div>

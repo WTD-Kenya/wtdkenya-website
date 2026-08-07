@@ -320,33 +320,24 @@
         "location": "Main Hall"
       },
       {
-        "id": "welcome-pwani",
+        "id": "mcm-keynote",
         "startsAt": "09:20",
         "endsAt": "09:30",
-        "title": "Welcome from Pwani University",
+        "title": "MCM Keynote",
         "type": "general",
-        "location": "Main Hall"
-      },
-      {
-        "id": "keynote",
-        "startsAt": "09:30",
-        "endsAt": "10:00",
-        "title": "Write the Docs Kenya Keynote",
-        "type": "general",
-        "description": "One inspiring keynote, everyone together",
         "location": "Main Hall"
       },
       {
         "id": "lightning-1",
-        "startsAt": "10:00",
-        "endsAt": "11:20",
+        "startsAt": "09:30",
+        "endsAt": "10:50",
         "title": "Lightning Session Block I",
         "type": "sequential",
         "description": "Everyone stays together — 15 min per talk.",
         "items": [
           {
-            "startsAt": "10:00",
-            "endsAt": "10:15",
+            "startsAt": "09:30",
+            "endsAt": "09:45",
             "speakers": [
               "Tonny Gidraph"
             ],
@@ -355,8 +346,8 @@
             "level": "Intermediate"
           },
           {
-            "startsAt": "10:20",
-            "endsAt": "10:35",
+            "startsAt": "09:50",
+            "endsAt": "10:05",
             "speakers": [
               "Stanley Ndagi"
             ],
@@ -365,8 +356,8 @@
             "level": "Intermediate"
           },
           {
-            "startsAt": "10:40",
-            "endsAt": "10:55",
+            "startsAt": "10:10",
+            "endsAt": "10:25",
             "speakers": [
               "Prince Onyeanuna"
             ],
@@ -375,8 +366,8 @@
             "level": "Intermediate"
           },
           {
-            "startsAt": "11:00",
-            "endsAt": "11:15",
+            "startsAt": "10:30",
+            "endsAt": "10:45",
             "speakers": [
               "Hidaya Vanessa"
             ],
@@ -387,9 +378,17 @@
         ]
       },
       {
+        "id": "tea-break",
+        "startsAt": "10:50",
+        "endsAt": "11:10",
+        "title": "Tea Break",
+        "type": "break",
+        "description": "Tea, coffee, and light snacks before the Docs Exchange Tables."
+      },
+      {
         "id": "docs-exchange-1",
-        "startsAt": "11:20",
-        "endsAt": "11:50",
+        "startsAt": "11:15",
+        "endsAt": "11:45",
         "title": "Docs Exchange Tables — Session One",
         "type": "parallel",
         "description": "Speakers facilitate discussion instead of presenting. Attendees choose a table using the two-sticker system from registration.",
@@ -426,14 +425,14 @@
       },
       {
         "id": "lightning-2",
-        "startsAt": "11:55",
-        "endsAt": "12:35",
+        "startsAt": "11:50",
+        "endsAt": "12:30",
         "title": "Lightning Session Block II",
         "type": "sequential",
         "items": [
           {
-            "startsAt": "11:55",
-            "endsAt": "12:10",
+            "startsAt": "11:50",
+            "endsAt": "12:05",
             "speakers": [
               "Bethwel Kiplagat"
             ],
@@ -442,8 +441,8 @@
             "level": "Introductory and overview"
           },
           {
-            "startsAt": "12:15",
-            "endsAt": "12:30",
+            "startsAt": "12:10",
+            "endsAt": "12:25",
             "speakers": [
               "Mosongo Danfold"
             ],
@@ -454,43 +453,35 @@
         ]
       },
       {
-        "id": "energy-break",
-        "startsAt": "12:35",
-        "endsAt": "12:50",
-        "title": "Energy Drink Session",
-        "type": "break",
-        "description": "Stretch break with a sponsor-branded energy drink handout, doubling as the walk back to the Main Hall for the panel."
-      },
-      {
         "id": "panel",
-        "startsAt": "12:55",
-        "endsAt": "13:40",
+        "startsAt": "12:35",
+        "endsAt": "13:20",
         "title": "Panel Discussion",
         "type": "general",
         "description": "The Future of Documentation in Africa: AI, Open Source, and Building Sustainable Documentation Communities. Moderator-led discussion followed by audience Q&A.",
         "panelists": [
-          "Write the Docs Kenya",
-          "Pwani University",
-          "KCA University",
-          "Industry Speaker",
-          "Open Source Representative"
+          "Daisy Auma (LuxHQ)",
+          "Raphael Emali (ChezaStemEd)",
+          "Juma Felixon (Cursor AI)",
+          "Edith Miano (MCM)"
         ],
-        "location": "Main Hall"
+        "location": "Main Hall",
+        "facilitator": "Juma Lawrence (WTD Kenya)"
       },
       {
         "id": "lunch",
-        "startsAt": "13:45",
-        "endsAt": "14:30",
+        "startsAt": "13:25",
+        "endsAt": "14:10",
         "title": "Lunch, Group Photo, Sponsor Networking, Swag Collection",
         "type": "break"
       },
       {
         "id": "workshop-choice",
-        "startsAt": "14:35",
-        "endsAt": "15:05",
+        "startsAt": "14:15",
+        "endsAt": "14:45",
         "title": "Hands-on Workshops (Choose One)",
         "type": "parallel",
-        "description": "Two hands-on workshops run in parallel — pick one to attend for the full session.",
+        "description": "Two hands-on workshops run in parallel — pick one to attend for the full session. Energy drinks will be distributed during this session.",
         "tracks": [
           {
             "label": "Station 1",
@@ -510,8 +501,8 @@
       },
       {
         "id": "docs-exchange-2",
-        "startsAt": "15:10",
-        "endsAt": "15:40",
+        "startsAt": "14:50",
+        "endsAt": "15:20",
         "title": "Docs Exchange Tables — Session Two",
         "type": "parallel",
         "description": "Attendees join a different table than in Session One.",
@@ -548,8 +539,8 @@
       },
       {
         "id": "workshop-afternoon",
-        "startsAt": "15:45",
-        "endsAt": "16:15",
+        "startsAt": "15:25",
+        "endsAt": "15:55",
         "title": "Cultivating AI Literacy: Making Tech Documentation Inclusive for All Communities",
         "type": "general",
         "format": "Workshop",
@@ -561,8 +552,8 @@
       },
       {
         "id": "closing",
-        "startsAt": "16:20",
-        "endsAt": "16:50",
+        "startsAt": "16:00",
+        "endsAt": "16:30",
         "title": "Closing Ceremony",
         "type": "general",
         "description": "Sponsor Appreciation, Volunteer Recognition, Speaker Appreciation, Community Awards, Closing Remarks, Announcement of Write the Docs Kenya 2027, Group Photo (if not taken earlier)."
