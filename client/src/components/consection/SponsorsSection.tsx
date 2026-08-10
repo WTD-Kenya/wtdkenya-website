@@ -6,7 +6,7 @@ interface Sponsor {
 
 const sponsors: Sponsor[] = [
   {
-    name: "Write the Docs Global",
+    name: "Write the Docs",
     logo: "https://pbs.twimg.com/media/Gss-sp3WEAAJXdq?format=png&name=360x360",
     website: "https://www.writethedocs.org",
   },
@@ -17,8 +17,13 @@ const sponsors: Sponsor[] = [
   },
   {
     name: "KCA University",
-    logo: null,
+    logo: null, // TODO: swap in the real KCA logo once a working image is provided
     website: "https://www.kca.ac.ke",
+  },
+  {
+    name: "Red Bull",
+    logo: "/sponsors/redbull.png",
+    website: "https://www.redbull.com",
   },
 ];
 
@@ -43,7 +48,6 @@ export default function SponsorsSection() {
                   {sponsor.name}
                 </div>
               )}
-              <p className="mt-2 text-gray-700 font-medium">{sponsor.name}</p>
             </a>
           ))}
         </div>
