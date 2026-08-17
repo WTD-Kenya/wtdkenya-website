@@ -6,11 +6,17 @@ import { AlertCircle } from "lucide-react";
 import EventCard from "@/components/EventCard";
 import { Link } from "wouter";
 import type { MeetupEvent } from "@/lib/types";
+import { curatedPastEvents } from "@/data/pastEvents";
 
 export default function PastEventsSection() {
   const { data: events, isLoading, error } = useQuery<MeetupEvent[]>({
     queryKey: ["/api/events?status=past"],
   });
+  const curatedEventIds = new Set(curatedPastEvents.map((event) => event.id));
+  const pastEvents = [
+    ...curatedPastEvents,
+    ...(events || []).filter((event) => !curatedEventIds.has(event.id)),
+  ].sort((a, b) => new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime());
 
   return (
     <section className="py-16 bg-gray-50">
@@ -36,7 +42,7 @@ export default function PastEventsSection() {
             </div>
           )}
 
-          {error && (
+          {error && pastEvents.length === 0 && (
             <Alert className="max-w-md mx-auto">
               <AlertCircle className="h-4 w-4" />
               <AlertDescription>
@@ -45,15 +51,15 @@ export default function PastEventsSection() {
             </Alert>
           )}
 
-          {events && events.length === 0 && !isLoading && (
+          {pastEvents.length === 0 && !isLoading && (
             <div className="text-center py-12">
               <p className="text-gray-600 text-lg">No past events yet.</p>
             </div>
           )}
 
-          {events && events.length > 0 && (
+          {pastEvents.length > 0 && (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {events.slice(0, 3).map((event) => (
+              {pastEvents.slice(0, 6).map((event) => (
                 <div key={event.id} className="bg-white rounded-xl shadow-lg overflow-hidden opacity-75">
                   <EventCard event={event} />
                 </div>

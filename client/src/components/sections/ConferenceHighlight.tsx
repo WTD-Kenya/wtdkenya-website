@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import RegistrationClosedDialog from "@/components/RegistrationClosedDialog";
 import conferenceData from "@/data/upcomingConference.json";
 
 export default function ConferenceHighlight() {
@@ -17,32 +16,22 @@ export default function ConferenceHighlight() {
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div>
             <span className="inline-block bg-kenya-red text-white text-sm font-semibold px-3 py-1 rounded-full mb-4">
-              Upcoming Conference
+              Past Conference
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">{event.name}</h2>
             <p className="text-gray-300 text-lg mb-2">
               {event.displayDate} · {event.venue}
             </p>
             <p className="text-gray-300 text-lg mb-8">
-              A day of talks, workshops, and networking with {speakers.length} speakers across{" "}
+              Revisit a day of talks, workshops, and networking with {speakers.length} speakers across{" "}
               {sessionCount} sessions.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/conference">
                 <Button className="bg-kenya-red text-white hover:bg-kenya-red">
-                  View Schedule & Speakers
+                  View Conference Recap
                 </Button>
               </Link>
-              <RegistrationClosedDialog
-                trigger={
-                  <Button
-                    variant="outline"
-                    className="bg-transparent border-white text-white hover:bg-white hover:text-kenya-black"
-                  >
-                    Register Now
-                  </Button>
-                }
-              />
             </div>
           </div>
 

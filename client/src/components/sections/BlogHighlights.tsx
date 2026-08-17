@@ -12,8 +12,11 @@ export default function BlogHighlights() {
   
   useEffect(() => {
     import("@/data/sampleBlogs.json").then((module) => {
-      const shuffled = [...module.default].sort(() => 0.5 - Math.random());
-      setSamplePosts(shuffled);
+      setSamplePosts(
+        [...module.default].sort(
+          (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+        ),
+      );
     });
   }, []);
   

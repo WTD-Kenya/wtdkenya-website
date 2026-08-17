@@ -16,13 +16,13 @@ export default function Conference() {
                 <title>Write The Docs Kenya Conference 2026</title>
                 <meta
                     name="description"
-                    content="Join us at Write The Docs Kenya Conference 2026 on August 8, 2026 at KCA University for insightful talks, networking, and more. Register now!"
+                    content="Revisit the Write The Docs Kenya Conference 2026, held on August 8, 2026 at KCA University, including its speakers, schedule, venue, and partners."
                 />
                 {/* Open Graph tags for social media sharing */}
                 <meta property="og:title" content="Write The Docs Kenya Conference 2026" />
                 <meta
                     property="og:description"
-                    content="Join us at Write The Docs Kenya Conference 2026 on August 8, 2026 at KCA University for insightful talks, networking, and more. Register now!"
+                    content="Revisit the Write The Docs Kenya Conference 2026, held on August 8, 2026 at KCA University."
                 />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://wtdke.netlify.app/conference" />
@@ -32,7 +32,7 @@ export default function Conference() {
                 <meta name="twitter:title" content="Write The Docs Kenya Conference 2026" />
                 <meta
                     name="twitter:description"
-                    content="Join us at Write The Docs Kenya Conference 2026 on August 8, 2026 at KCA University for insightful talks, networking, and more. Register now!"
+                    content="Revisit the Write The Docs Kenya Conference 2026, held on August 8, 2026 at KCA University."
                 />
                 <meta name="twitter:image" content="https://wtdke.netlify.app/og-image.jpg" />
             </Helmet>

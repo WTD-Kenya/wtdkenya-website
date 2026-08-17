@@ -1,5 +1,4 @@
 import conferenceData from "@/data/upcomingConference.json";
-import RegistrationClosedDialog from "@/components/RegistrationClosedDialog";
 import ScheduleSection from "@/components/consection/ScheduleSection";
 
 export default function HeroScheduleSection() {
@@ -21,19 +20,15 @@ export default function HeroScheduleSection() {
               {displayDate} | {venue}
             </p>
             <h2 className="text-2xl md:text-3xl font-semibold text-kenya-black mb-4">
-              Bringing together Kenya's documentation and developer community
+              Revisiting Kenya's documentation and developer community gathering
             </h2>
             <p className="text-base md:text-lg text-gray-600 mb-6">
-              A day of talks, workshops, and networking for technical writers, developers, and
-              documentation enthusiasts.
+              Explore the speakers and schedule from a day of talks, workshops, and networking
+              for technical writers, developers, and documentation enthusiasts.
             </p>
-            <RegistrationClosedDialog
-              trigger={
-                <button className="inline-block bg-kenya-red text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-kenya-red transition">
-                  Register Now
-                </button>
-              }
-            />
+            <span className="inline-block bg-kenya-black text-white px-6 py-3 rounded-lg font-semibold">
+              Conference held on {displayDate}
+            </span>
 
             <div className="mt-10 space-y-5 border-t border-gray-200 pt-8">
               <div>

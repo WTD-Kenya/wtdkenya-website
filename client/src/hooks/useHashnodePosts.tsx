@@ -1,66 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
+import type { HashnodePost } from "@/lib/types";
 
-const query = `
-  query GetPosts($host: String!) {
-    publication(host: $host) {
-      posts(first: 50) {
-        edges {
-          node {
-            id
-            title
-            brief
-            slug
-            coverImage {
-              url
-            }
-            url
-            publishedAt
-            author {
-              name
-              profilePicture
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+const fetchHashnodePosts = async (): Promise<HashnodePost[]> => {
+  const res = await fetch("/api/blog");
+  if (!res.ok) return [];
 
-// Hashnode's public GraphQL API has been discontinued (gql.hashnode.com now
-// redirects to a paid-access changelog page), so this call is expected to
-// fail. Any failure here resolves to an empty list instead of throwing, so
-// callers fall back to curated posts instead of surfacing a network error.
-const fetchHashnodePosts = async (): Promise<any[]> => {
-  try {
-    const res = await fetch("https://gql.hashnode.com", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query,
-        variables: {
-          host: "wtdkenya.hashnode.dev"
-        }
-      })
-    });
-
-    if (!res.ok) return [];
-
-    const data = await res.json();
-    const edges = data?.data?.publication?.posts?.edges;
-    if (!edges) return [];
-
-    const allPosts = edges.map((edge: any) => ({
-      ...edge.node,
-      id: edge.node.id || edge.node.slug,
-      coverImage: edge.node.coverImage?.url,
-    }));
-
-    // Randomly select 12 posts
-    const shuffled = [...allPosts].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 12);
-  } catch {
-    return [];
-  }
+  const posts: HashnodePost[] = await res.json();
+  return posts.sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
 };
 
 export function useHashnodePosts() {

@@ -17,7 +17,7 @@ const sponsors: Sponsor[] = [
   },
   {
     name: "KCA University",
-    logo: null, // TODO: swap in the real KCA logo once a working image is provided
+    logo: "https://www.kcau.ac.ke/wp-content/uploads/2022/06/KCAU-logo.svg",
     website: "https://www.kca.ac.ke",
   },
   {

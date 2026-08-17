@@ -16,6 +16,11 @@ export default function EventCard({ event }: EventCardProps) {
   };
 
   const handleRSVP = () => {
+    if (event.link.startsWith("/")) {
+      window.location.href = event.link;
+      return;
+    }
+
     window.open(event.link, "_blank", "noopener,noreferrer");
   };
 
@@ -41,15 +46,15 @@ export default function EventCard({ event }: EventCardProps) {
         <div className="mt-6 flex items-center justify-between">
           <div className="text-sm text-gray-500">
             <i className="fas fa-users mr-1"></i>
-            {event.going} attending
+            {event.attendanceLabel || `${event.going} attending`}
           </div>
           <Button 
             onClick={handleRSVP}
             className="bg-kenya-red text-white hover:bg-kenya-red/90"
             size="sm"
           >
-            RSVP on Meetup
-            <i className="fas fa-external-link-alt ml-2"></i>
+            {event.actionLabel || "RSVP on Meetup"}
+            <i className={`fas ${event.link.startsWith("/") ? "fa-arrow-right" : "fa-external-link-alt"} ml-2`}></i>
           </Button>
         </div>
       </div>

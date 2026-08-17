@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-orange-50">
@@ -35,4 +33,4 @@ export default function AboutSection() {
       </div>
     </section>
   );
-} 
+}

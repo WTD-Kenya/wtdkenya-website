@@ -1,5 +1,5 @@
 import type { Testimonial } from "@/lib/types";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function TestimonialSection() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);

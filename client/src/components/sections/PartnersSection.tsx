@@ -39,6 +39,16 @@ export default function PartnersSection() {
       name: "GitHub",
       logo: "https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png",
       website: "https://github.com"
+    },
+    {
+      name: "KCA University",
+      logo: "https://www.kcau.ac.ke/wp-content/uploads/2022/06/KCAU-logo.svg",
+      website: "https://www.kcau.ac.ke/"
+    },
+    {
+      name: "Red Bull",
+      logo: "/sponsors/redbull.png",
+      website: "https://www.redbull.com/"
     }
   ];
 

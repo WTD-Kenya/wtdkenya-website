@@ -9,6 +9,8 @@ export interface MeetupEvent {
   };
   link: string;
   going: number;
+  actionLabel?: string;
+  attendanceLabel?: string;
 }
 
 export interface HashnodePost {

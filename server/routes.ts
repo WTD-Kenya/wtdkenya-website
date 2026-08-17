@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSubmissionSchema, type MeetupEvent, type HashnodePost } from "@shared/schema";
 import { z } from "zod";
+import { XMLParser } from "fast-xml-parser";
 
 // Cloudinary imports
 import { v2 as cloudinary } from "cloudinary";
@@ -75,63 +76,66 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Hashnode API proxy
-  app.get("/api/blog", async (req, res) => {
+  // Hashnode RSS proxy. Hashnode's GraphQL API requires a paid plan, while
+  // publication RSS feeds remain public and are ordered newest-first.
+  app.get("/api/blog", async (_req, res) => {
     try {
-      // Hashnode GraphQL query
-      const query = `
-        query GetPosts($host: String!) {
-          publication(host: $host) {
-            posts(first: 20) {
-              edges {
-                node {
-                  id
-                  title
-                  brief
-                  coverImage {
-                    url
-                  }
-                  slug
-                  publishedAt
-                  author {
-                    name
-                    profilePicture
-                  }
-                  url
-                }
-              }
-            }
-          }
-        }
-      `;
-
-      const variables = {
-        host: "wtdkenya.hashnode.dev"
-
-        // host: "wtdkenya.hashnode.dev" // Use just the subdomain, not the full URL
-      };
-
-      const response = await fetch("https://gql.hashnode.com", {
-        method: "POST",
+      const response = await fetch("https://wtdkenya.hashnode.dev/rss.xml", {
         headers: {
-          "Content-Type": "application/json"
-          // No API key needed for public blogs
+          Accept: "application/rss+xml, application/xml;q=0.9",
+          "User-Agent": "WriteTheDocsKenyaWebsite/1.0",
         },
-        body: JSON.stringify({ query, variables })
       });
 
-      const data = await response.json();
-      const posts = data.data?.publication?.posts?.edges?.map((edge: any) => edge.node) || [];
+      if (!response.ok) {
+        throw new Error(`Hashnode RSS error: ${response.status}`);
+      }
+
+      const xml = await response.text();
+      const parser = new XMLParser({
+        ignoreAttributes: false,
+        attributeNamePrefix: "",
+        processEntities: true,
+      });
+      const feed = parser.parse(xml);
+      const rawItems = feed?.rss?.channel?.item;
+      const items = Array.isArray(rawItems) ? rawItems : rawItems ? [rawItems] : [];
+
+      const posts: HashnodePost[] = items
+        .map((item: any) => {
+          const url = String(item.link || item.guid || "");
+          const slug = url.split("/").filter(Boolean).pop() || url;
+
+          return {
+            id: String(item.guid?.["#text"] || item.guid || url),
+            title: String(item.title || "Untitled"),
+            brief: String(item.description || ""),
+            coverImage: item.enclosure?.url,
+            slug,
+            publishedAt: new Date(item.pubDate).toISOString(),
+            author: {
+              name: String(item["dc:creator"] || "Write the Docs Kenya"),
+            },
+            url,
+          };
+        })
+        .filter((post: HashnodePost) => post.url)
+        .sort(
+          (a: HashnodePost, b: HashnodePost) =>
+            new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+        );
+
+      res.set("Cache-Control", "public, max-age=300, s-maxage=900");
       res.json(posts);
     } catch (err) {
-      console.error("Hashnode fetch error:", err);
+      console.error("Hashnode RSS fetch error:", err);
       res.status(500).json({ error: "Failed to fetch blog posts from Hashnode" });
     }
   });
 
   // Cloudinary Gallery API
   // This endpoint fetches optimized image URLs from a specific Cloudinary folder
-  app.get("/api/gallery", async (req, res) => {
+  app.get("/api/gallery", async (_req, res) => {
     try {
       const folder = "wtdsummit2025";
       const result = await cloudinary.search

@@ -9,6 +9,7 @@ import { AlertCircle } from "lucide-react";
 // import EventGallery from "@/components/EventGallery"; // Import the new component
 import Event_Gallery from "@/components/Event_Gallery.tsx";
 import type { MeetupEvent } from "@/lib/types";
+import { curatedPastEvents } from "@/data/pastEvents";
 
 export default function Events() {
   const {
@@ -18,7 +19,6 @@ export default function Events() {
   } = useQuery<MeetupEvent[]>({
     queryKey: ["/api/events?status=upcoming"],
   });
-
   const {
     data: pastEvents,
     isLoading: pastLoading,
@@ -26,6 +26,11 @@ export default function Events() {
   } = useQuery<MeetupEvent[]>({
     queryKey: ["/api/events?status=past"],
   });
+  const curatedEventIds = new Set(curatedPastEvents.map((event) => event.id));
+  const archivedEvents = [
+    ...curatedPastEvents,
+    ...(pastEvents || []).filter((event) => !curatedEventIds.has(event.id)),
+  ].sort((a, b) => new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime());
 
   return (
     <div className="min-h-screen bg-white">
@@ -122,7 +127,7 @@ export default function Events() {
               </div>
             )}
 
-            {pastError && (
+            {pastError && archivedEvents.length === 0 && (
               <Alert className="max-w-md mx-auto">
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>
@@ -131,15 +136,15 @@ export default function Events() {
               </Alert>
             )}
 
-            {pastEvents && pastEvents.length === 0 && !pastLoading && (
+            {archivedEvents.length === 0 && !pastLoading && (
               <div className="text-center py-12">
                 <p className="text-gray-600 text-lg">No past events yet.</p>
               </div>
             )}
 
-            {pastEvents && pastEvents.length > 0 && (
+            {archivedEvents.length > 0 && (
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {pastEvents.map((event) => (
+                {archivedEvents.map((event) => (
                   <div key={event.id} className="bg-white rounded-xl shadow-lg overflow-hidden opacity-75">
                     <EventCard event={event} />
                   </div>
